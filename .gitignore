@@ -12,6 +12,7 @@ SysInfo.txt
 # OS / IDE junk
 .DS_Store
 .vscode/
+.vs/
 .idea/
 *.sln
 *.csproj
