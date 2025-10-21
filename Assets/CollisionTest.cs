@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CollisionTest : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D()
     {
         // This decreases health by 50 points when the triangle hits the hexagon.
-        // It throws a NullReferenceException but still works.
         this.GetComponent<PlaceholderScript>().SetHealth(-50f);
         
     }
