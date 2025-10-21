@@ -14,7 +14,8 @@ public class HealthBarUI : MonoBehaviour
     {
         MaxHealth = maxHealth;
     }
-    
+
+    // This changes the health bar width depending on current health.
     public void SetHealth(float health)
     {
         Health = health;

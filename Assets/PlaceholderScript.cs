@@ -10,26 +10,34 @@ public class PlaceholderScript : MonoBehaviour
     private HealthBarUI healthBar;
     
 
-    // Start is called before the first frame update
+    // This sets the healthbar to the maximum health when starting.
     void Start()
     {
         healthBar.SetMaxHealth(MaxHealth);
     }
 
-    // Update is called once per frame
+    // This updates healthbar in response to keyboard input.
     void Update()
     {
-        if (Input.GetKeyDown("a"))
+        /*
+        if (Input.GetKeyDown("q"))
         {
             SetHealth(-20f);
         }
 
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown("w"))
         {
             SetHealth(20f);
         }
+        */
+
+
     }
     
+    
+
+
+    // This is how the healthbar updates.
     public void SetHealth(float healthChange)
     {
         Health += healthChange;
