@@ -1,4 +1,4 @@
-using System.Numerics;
+//using System.Numerics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class DragManager : MonoBehaviour
 
     private void Start()
     {
-        mainCam = Camera.main();
+        mainCam = Camera.main;
     }
 
     private void Update() //updating every frame
@@ -25,7 +25,7 @@ public class DragManager : MonoBehaviour
             DragSelectTower();
         }
 
-        if (Input.GetMouseButtonDownUp(0) && selectTower != null) //if the player releases the left mouse
+        if (Input.GetMouseButtonUp(0) && selectTower != null) //if the player releases the left mouse
         {
             DropSelectTower();
         }
@@ -35,11 +35,11 @@ public class DragManager : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition; //getting mouse Pos
 
-        mousePos.Z = -mainCam.ScreenToWorldPoint(mousePos); //convert to world pos
+        mousePos.z = -mainCam.transform.position.z; //convert to world pos
         Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
 
-        RayCastHit2D hit = Physicsd2D.RayCast(worldPos, Vector2.zero); //checking to make sure it is a tower
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero); //checking to make sure it is a tower
 
         if (hit.collider != null)
         {
@@ -56,10 +56,10 @@ public class DragManager : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition; //getting the mouse position
 
-        mousePos.Z = mainCam.ScreenToWorldPoint(mousePos); //convert to world pos
+        mousePos.z = mainCam.transform.position.z; //convert to world pos
         Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
-        selectTower.transform.position = new Vector3(worldPos.X, worldPos.Y, 0f); //select tower moving to it's new position
+        selectTower.transform.position = new Vector3(worldPos.x, worldPos.y, 0f); //select tower moving to it's new position
 
     }
 
