@@ -24,4 +24,14 @@ public class BaseScript : MonoBehaviour
 
         healthBar.SetHealth(Health);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // This decreases health by 50 points when the enemy hits the base.
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            SetHealth(-50f);
+        }
+        
+    }
 }

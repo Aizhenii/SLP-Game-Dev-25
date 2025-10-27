@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 13396085}
   - component: {fileID: 13396084}
   - component: {fileID: 13396087}
-  - component: {fileID: 13396088}
   m_Layer: 0
   m_Name: BasePlaceholder
   m_TagString: Untagged
@@ -259,18 +258,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &13396088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13396083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f56a9912ec4754e6d8204903e20e2716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &470851594
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,11 +424,10 @@ GameObject:
   m_Component:
   - component: {fileID: 929063399}
   - component: {fileID: 929063398}
-  - component: {fileID: 929063400}
   - component: {fileID: 929063401}
   - component: {fileID: 929063402}
   m_Layer: 0
-  m_Name: Square
+  m_Name: StructurePlaceholder
   m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,24 +494,12 @@ Transform:
   m_GameObject: {fileID: 929063397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 365, z: 0}
+  m_LocalPosition: {x: -15, y: 351, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &929063400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929063397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70d4e26d8e6b47a7b5d7d1f1c2266b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &929063401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -769,7 +743,7 @@ GameObject:
   - component: {fileID: 1254418421}
   - component: {fileID: 1254418422}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: EnemyPlaceholder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
