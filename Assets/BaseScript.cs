@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceholderScript : MonoBehaviour
+public class BaseScript : MonoBehaviour
 {
     public float Health, MaxHealth;
     
@@ -15,27 +15,6 @@ public class PlaceholderScript : MonoBehaviour
     {
         healthBar.SetMaxHealth(MaxHealth);
     }
-
-    // This updates healthbar in response to keyboard input.
-    void Update()
-    {
-        /*
-        if (Input.GetKeyDown("q"))
-        {
-            SetHealth(-20f);
-        }
-
-        if (Input.GetKeyDown("w"))
-        {
-            SetHealth(20f);
-        }
-        */
-
-
-    }
-    
-    
-
 
     // This is how the healthbar updates.
     public void SetHealth(float healthChange)

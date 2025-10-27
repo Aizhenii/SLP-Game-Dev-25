@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionTest : MonoBehaviour
+public class ReduceBaseHealthOnCollision : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // This decreases health by 50 points when the triangle hits the hexagon.
+        // This decreases health by 50 points when the enemy hits the base.
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            this.GetComponent<PlaceholderScript>().SetHealth(-50f);
+            this.GetComponent<BaseScript>().SetHealth(-50f);
         }
         
     }
