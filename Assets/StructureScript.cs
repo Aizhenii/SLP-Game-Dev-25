@@ -38,6 +38,7 @@ public class StructureScript : MonoBehaviour
         {
             Destroy(GetComponent<BoxCollider2D>());
         }
-        
+
     }
+    
 }
