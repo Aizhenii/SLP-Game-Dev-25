@@ -27,11 +27,17 @@ public class StructureScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // This block of code decreases health when the enemy hits the structure.
-        while (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0)
+        IEnumerator DamageEveryOtherSecond()
         {
-            SetHealth(-5f);
+            while (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0)
+            {
+                SetHealth(-10f);
+            }
+            yield return new WaitForSeconds(2);
         }
+        
+        // This block of code decreases health when the enemy hits the structure.
+        StartCoroutine(DamageEveryOtherSecond());
 
         // This block of code removes the structure collider box when the structure health is 0.
         if (StructureHealth == 0)
@@ -40,5 +46,7 @@ public class StructureScript : MonoBehaviour
         }
 
     }
+
+    
     
 }
