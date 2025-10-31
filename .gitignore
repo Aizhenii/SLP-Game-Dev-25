@@ -13,6 +13,7 @@ SysInfo.txt
 .DS_Store
 .vscode/
 .vs/
+.vsconfig
 .idea/
 *.sln
 *.csproj
