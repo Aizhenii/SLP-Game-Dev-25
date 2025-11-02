@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{036521E7-4E3A-B069-DB70-900C069F5811}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GridSystem.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GridSystem.cs" Line="5" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SLP-Game-Dev-25" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="390e6cb9-d4d9-419d-ba6f-0e1709108400" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
