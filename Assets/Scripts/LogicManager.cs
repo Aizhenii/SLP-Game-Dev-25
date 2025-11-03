@@ -55,6 +55,6 @@ public class LogicManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Returning to Menu Scene...");
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("Title_Scene");
     }
 }
