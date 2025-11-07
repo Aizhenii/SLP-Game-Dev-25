@@ -5,9 +5,12 @@ using UnityEngine;
 public class BaseScript : MonoBehaviour
 {
     public float Health, MaxHealth;
-    
+
     [SerializeField]
     private HealthBarUI healthBar;
+    
+    private float damage;
+    private GameObject enemy;
     
 
     // This sets the healthbar to the maximum health when starting.
@@ -30,7 +33,10 @@ public class BaseScript : MonoBehaviour
         // This decreases health by 50 points when the enemy hits the base.
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            SetHealth(-50f);
+            enemy = GameObject.Find("EnemyPlaceholder");
+            damage = enemy.GetComponent<EnemyScript>().attackDmg;
+
+            SetHealth(-damage);
         }
         
     }

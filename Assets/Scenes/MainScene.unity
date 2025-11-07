@@ -154,6 +154,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c50d48977a8467dbbc047a9733aa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1460141479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+  m_PrefabInstance: {fileID: 6247856981548951017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460141485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460141479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbd8accad7f847ca97eddab4b3b8ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  speed: 500
+  attackDmg: 10
+  pointA: {fileID: 876335396}
+  pointB: {fileID: 2091390434}
+  pointC: {fileID: 540004852}
 --- !u!1 &2091390434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2435138333587370966, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
@@ -670,10 +693,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPlaceholder
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460141485}
   m_SourcePrefab: {fileID: 100100000, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
 --- !u!1001 &8869471847473232589
 PrefabInstance:
