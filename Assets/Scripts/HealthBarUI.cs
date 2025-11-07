@@ -7,8 +7,18 @@ public class HealthBarUI : MonoBehaviour
 {
     public float Health, MaxHealth, Width, Height;
 
+    public bool BaseDestroyed = false;
+
     [SerializeField]
     private RectTransform healthBar;
+
+    private void Update()
+    {
+        if (Health == 0)
+        {
+            BaseDestroyed = true;
+        }
+    }
 
     public void SetMaxHealth(float maxHealth)
     {
