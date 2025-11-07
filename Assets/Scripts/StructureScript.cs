@@ -5,6 +5,10 @@ using UnityEngine;
 public class StructureScript : MonoBehaviour
 {
     public float StructureHealth, StructureMaxHealth;
+
+
+    private float damage;
+    private GameObject enemy;
     
     [SerializeField]
     private HealthBarUI healthBar;
@@ -25,19 +29,20 @@ public class StructureScript : MonoBehaviour
         healthBar.SetHealth(StructureHealth);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        IEnumerator DamageEveryOtherSecond()
-        {
-            while (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0)
-            {
-                SetHealth(-10f);
-            }
-            yield return new WaitForSeconds(2);
-        }
-        
+
+        int delay = 0; // This variable is to prevent the health from reaching 0 immediately.
+
         // This block of code decreases health when the enemy hits the structure.
-        StartCoroutine(DamageEveryOtherSecond());
+        if (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0 && delay % 10000000 == 0)
+        {
+            enemy = GameObject.Find("EnemyPlaceholder");
+            damage = enemy.GetComponent<EnemyScript>().attackDmg;
+
+            SetHealth(-damage);
+        }
+        delay++;
 
         // This block of code removes the structure collider box when the structure health is 0.
         if (StructureHealth == 0)
@@ -46,6 +51,8 @@ public class StructureScript : MonoBehaviour
         }
 
     }
+    
+    
 
     
     
