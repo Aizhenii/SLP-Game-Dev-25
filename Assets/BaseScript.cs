@@ -5,10 +5,19 @@ using UnityEngine;
 public class BaseScript : MonoBehaviour
 {
     public float Health, MaxHealth;
+
+    public bool BaseDestroyed = false;
     
     [SerializeField]
     private HealthBarUI healthBar;
-    
+
+    private void Update()
+    {
+        if (Health == 0)
+        {
+            BaseDestroyed = true;
+        }
+    }
 
     // This sets the healthbar to the maximum health when starting.
     void Start()

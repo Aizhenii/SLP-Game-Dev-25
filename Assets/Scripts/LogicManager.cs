@@ -14,15 +14,39 @@ public class LogicManager : MonoBehaviour
     public GameObject LevelCompleteScreen;
     public GameObject WaveCompleteScreen;
 
-    public bool currentLevel;
+    //Game State Variables
+    public bool baseDestroyed = false;
+    public bool levelComplete = false;
+    public bool waveComplete = false;
 
+    public BaseScript BaseDestroyed;
+
+    private void Update()
+    {
+        if (BaseDestroyed)
+        {
+            LoseGame();
+        }
+
+        if (levelComplete)
+        {
+            LevelComplete();
+        }
+
+        if (waveComplete)
+        {
+            WaveComplete();
+        }
+    }
 
     public void NextLevel()
     {
-        if (currentLevel)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void NextWave()
+    {
+        //next wave logic (enemy spawner etc.)
     }
 
     public void RestartLevel()
@@ -42,14 +66,11 @@ public class LogicManager : MonoBehaviour
         WaveCompleteScreen.SetActive(true);
 
         Time.timeScale = 0f;
-
-        //Start Next Wave Logic
     }
 
     public void LoseGame()
     {
         LoseScreen.SetActive(true);
-
     }
 
     public void QuitGame()
