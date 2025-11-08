@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Grid.cs" Line="19" Column="55" />
-      <File FileName="Assets/Scripts/TowerDragNDrop.cs" Line="42" Column="42" />
-      <File FileName="Assets/Scripts/DefenseTower.cs" Line="11" Column="19" />
+      <File FileName="Assets/Scripts/TowerDragNDrop.cs" />
+      <File FileName="Assets/Scripts/DefenseTower.cs" />
       <File FileName="Assets/Scripts/AttackTower.cs" Line="57" Column="32" />
       <File FileName="Assets/Scripts/EnemyScript.cs" Line="28" Column="31" />
     </Files>
@@ -13,7 +13,7 @@
           <Node name="SLP-Game-Dev-25" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="EnemyScript.cs" selected="True" />
+                <Node name="Grid.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -23,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="99b2cbec-f852-40d6-8e08-bae79b9ad1b6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f369eb71-08a9-431e-8170-a2d5db7b55a4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
