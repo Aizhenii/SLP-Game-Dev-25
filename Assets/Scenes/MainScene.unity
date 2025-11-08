@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c325049e07a774bd4b7ea5b1c11ee4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 1000
   attackDamage: 15
   attackInterval: 1
   searchInterval: 0.25
@@ -719,6 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+    - {fileID: 2250528387265715073, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

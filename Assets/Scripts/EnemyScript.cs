@@ -41,8 +41,9 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
-        health -= amt;
-        if(health <= 0.0)
+        health = health - amt;
+        Debug.Log("Hit"); //can delete if you want - Elsa
+        if(health <= 0f)
         {
             Die();
         }
@@ -52,6 +53,7 @@ public class EnemyScript : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        Debug.Log("Died"); //can delete if you want - Elsa
     }
 
     /*

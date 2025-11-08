@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackTower : MonoBehaviour{
     [Header("Attack Tower Stats")]
     public float attackRange = 10f; //range of attack
-    public float attackDamage = 15f; //amount of damage tower does
+    public float attackDamage = 1000f; //amount of damage tower does
     public float attackInterval = 1f; //wait this amount of seconds before attacking again
     public float searchInterval = .25f; //time between searches for an enemy
     private EnemyScript enemy; //get enemy
