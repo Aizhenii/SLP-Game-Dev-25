@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5471251201011043668}
   - component: {fileID: 4158131124331175553}
-  - component: {fileID: 3947096153667819371}
   - component: {fileID: 1817101921649640547}
+  - component: {fileID: 3044983041432553761}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.44, y: 263.99997, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3947096153667819371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7425575079869569085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b0d34b9cd2004ec495d78a9909aa568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1817101921649640547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3044983041432553761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7425575079869569085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26041e60fd95c7b44ac888803b306901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentGrid: {x: 0, y: 0}
+  cellSize: {x: 1, y: 1}
+  gridOrigin: {x: 0, y: 0}
