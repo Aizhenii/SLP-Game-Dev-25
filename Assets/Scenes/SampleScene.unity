@@ -315,9 +315,10 @@ GameObject:
   - component: {fileID: 569374507}
   - component: {fileID: 569374506}
   - component: {fileID: 569374505}
+  - component: {fileID: 569374509}
   m_Layer: 0
-  m_Name: Tower (1)
-  m_TagString: Untagged
+  m_Name: AttackTower
+  m_TagString: AttackTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.75, y: 19}
+  m_AnchoredPosition: {x: 219, y: 31}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569374505
@@ -378,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.5940123, b: 0.43075827, a: 1}
+  m_Color: {r: 1, g: 0.18947048, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -403,6 +404,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569374503}
   m_CullTransparentMesh: 1
+--- !u!114 &569374509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569374503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c325049e07a774bd4b7ea5b1c11ee4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 5
+  attackDamage: 15
+  enemyObject: {fileID: 0}
+  attackInterval: 1
 --- !u!1 &621233855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,9 +2525,10 @@ GameObject:
   - component: {fileID: 2090673869}
   - component: {fileID: 2090673868}
   - component: {fileID: 2090673867}
+  - component: {fileID: 2090673871}
   m_Layer: 0
-  m_Name: Tower
-  m_TagString: Untagged
+  m_Name: DefenseTower
+  m_TagString: DefenseTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2531,7 +2549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.75, y: 104}
+  m_AnchoredPosition: {x: 220, y: 131}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2090673867
@@ -2596,6 +2614,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090673865}
   m_CullTransparentMesh: 1
+--- !u!114 &2090673871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090673865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b00e9e7445c401dbaa42de47747dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attackedTower: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
