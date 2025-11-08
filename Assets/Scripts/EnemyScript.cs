@@ -1,4 +1,4 @@
-using System.Security;
+//using System.Security;
 using UnityEngine;
 
 /// <summary> 
@@ -41,7 +41,8 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
-        if(health <= 0.5)
+        health -= amt;
+        if(health <= 0.0)
         {
             Die();
         }
