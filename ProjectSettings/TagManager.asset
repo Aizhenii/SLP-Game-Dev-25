@@ -9,6 +9,7 @@ TagManager:
   - DefenseTower
   - AttackTower
   - Grid
+  - Base
   layers:
   - Default
   - TransparentFX
