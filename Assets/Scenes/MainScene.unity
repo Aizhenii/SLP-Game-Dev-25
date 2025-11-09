@@ -159,7 +159,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
   m_PrefabInstance: {fileID: 6247856981548951017}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1460141485
+--- !u!114 &1460141490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  speed: 500
+  speed: 200
   attackDmg: 10
   pointA: {fileID: 876335396}
   pointB: {fileID: 2091390434}
@@ -677,18 +677,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
-      propertyPath: pointA
-      value: 
-      objectReference: {fileID: 876335396}
-    - target: {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
-      propertyPath: pointB
-      value: 
-      objectReference: {fileID: 2091390434}
-    - target: {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
-      propertyPath: pointC
-      value: 
-      objectReference: {fileID: 540004852}
     - target: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
       propertyPath: m_Name
       value: EnemyPlaceholder
@@ -700,7 +688,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1460141485}
+      addedObject: {fileID: 1460141490}
   m_SourcePrefab: {fileID: 100100000, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
 --- !u!1001 &8869471847473232589
 PrefabInstance:
