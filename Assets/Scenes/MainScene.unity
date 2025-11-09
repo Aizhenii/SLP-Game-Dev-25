@@ -177,6 +177,27 @@ MonoBehaviour:
   pointA: {fileID: 876335396}
   pointB: {fileID: 2091390434}
   pointC: {fileID: 540004852}
+--- !u!1 &2079136338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472867218913074563, guid: f361448c7517c4e25bf902d328e55399, type: 3}
+  m_PrefabInstance: {fileID: 2158335814425091434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079136344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079136338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c325049e07a774bd4b7ea5b1c11ee4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1000
+  attackDamage: 15
+  attackInterval: 1
+  searchInterval: 0.25
 --- !u!1 &2091390434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2435138333587370966, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
@@ -302,7 +323,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3472867218913074563, guid: f361448c7517c4e25bf902d328e55399, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2079136344}
   m_SourcePrefab: {fileID: 100100000, guid: f361448c7517c4e25bf902d328e55399, type: 3}
 --- !u!1001 &3348260063170514700
 PrefabInstance:
@@ -683,6 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2069705384094000605, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+    - {fileID: 2250528387265715073, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
