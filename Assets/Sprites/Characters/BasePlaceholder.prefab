@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 200
   MaxHealth: 200
-  healthBar: {fileID: 0}
+  enemy: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+  healthBar: {fileID: 8351135565331047571, guid: 1077cfd1067bf43938b14a71cad770d0, type: 3}
 --- !u!58 &8560716278907276269
 CircleCollider2D:
   m_ObjectHideFlags: 0

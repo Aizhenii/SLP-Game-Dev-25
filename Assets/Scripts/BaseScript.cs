@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class BaseScript : MonoBehaviour
 {
     public float Health, MaxHealth;
-    
+    public GameObject enemy;
+
     [SerializeField]
     private HealthBarUI healthBar;
+    
+    private EnemyScript enemyDamage;
     
 
     // This sets the healthbar to the maximum health when starting.
     void Start()
     {
         healthBar.SetMaxHealth(MaxHealth);
+        enemyDamage = enemy.GetComponent<EnemyScript>();
+        enemyDamage.attackDmg = -20f;
     }
 
     // This is how the healthbar updates.
@@ -27,13 +33,11 @@ public class BaseScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // This decreases health by 50 points when the enemy hits the base.
+        // This decreases health by damage points when the enemy hits the base.
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            enemy = GameObject.Find("EnemyPlaceholder");
-            damage = enemy.GetComponent<EnemyScript>().attackDmg;
-
-            SetHealth(-damage);
+            UnityEngine.Debug.Log("base attacked");
+            SetHealth(enemyDamage.attackDmg);
         }
         
     }

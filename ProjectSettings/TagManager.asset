@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Structure
+  - DefenseTower
+  - AttackTower
+  - Grid
+  - Base
   layers:
   - Default
   - TransparentFX
