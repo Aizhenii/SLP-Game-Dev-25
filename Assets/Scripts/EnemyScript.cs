@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using System.Security;
 using UnityEngine;
 
@@ -11,9 +12,9 @@ public class EnemyScript : MonoBehaviour
 {
     public float health = 100f;
 
-    public float speed = 200f;
+    private float speed = 200f;
 
-    public float attackDmg = 10f;
+    public float attackDmg = 20f;
 
     //private transform player;
 
@@ -39,23 +40,41 @@ public class EnemyScript : MonoBehaviour
         EnemyPathing();
     }
 
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // This deletes the enemy once it hits the base.
+        if (collision.gameObject.CompareTag("Base"))
+        {
+            Die();
+        }
+
+    }
+    
+
+    public float Damage
+    {
+        get { return attackDmg; } // used to damage structures
+    }
+
     public void TakeDamage(float amt)
     {
         health = health - amt;
         Debug.Log("Hit"); //can delete if you want - Elsa
-        if(health <= 0f)
+        if (health <= 0f)
         {
             Die();
         }
     }
+    
 
 
     private void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.3f);
         Debug.Log("Died"); //can delete if you want - Elsa
     }
-
+    
     /*
     public void AttackTower(Tower playerScript)
     {

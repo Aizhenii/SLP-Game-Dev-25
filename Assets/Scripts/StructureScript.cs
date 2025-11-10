@@ -7,17 +7,20 @@ public class StructureScript : MonoBehaviour
     public float StructureHealth, StructureMaxHealth;
 
 
-    private float damage;
-    private GameObject enemy;
-    
+    public GameObject enemy;
+
     [SerializeField]
     private HealthBarUI healthBar;
+    
+    private EnemyScript enemyDamage;
     
 
     // This sets the healthbar to the maximum health when starting.
     void Start()
     {
         healthBar.SetMaxHealth(StructureMaxHealth);
+        enemyDamage = enemy.GetComponent<EnemyScript>();
+        enemyDamage.attackDmg = -20f;
     }
 
     // This is how the healthbar updates.
@@ -35,12 +38,10 @@ public class StructureScript : MonoBehaviour
         int delay = 0; // This variable is to prevent the health from reaching 0 immediately.
 
         // This block of code decreases health when the enemy hits the structure.
-        if (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0 && delay % 10000000 == 0)
+        if (collision.gameObject.CompareTag("Enemy") && StructureHealth > 0 && delay % 100 == 0)
         {
-            enemy = GameObject.Find("EnemyPlaceholder");
-            damage = enemy.GetComponent<EnemyScript>().attackDmg;
-
-            SetHealth(-damage);
+            
+            SetHealth(enemyDamage.attackDmg);
         }
         delay++;
 
