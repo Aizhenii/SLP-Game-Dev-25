@@ -162,8 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  speed: 200
-  attackDmg: 20
-  pointA: {fileID: 404702079875402328, guid: a7167a2bdfccc494380f99105e0a99bb, type: 3}
-  pointB: {fileID: 2435138333587370966, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
-  pointC: {fileID: 6707044032427396152, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
+  attackDmg: -20
+  waypoints:
+  - {fileID: 8106707669801418019, guid: a7167a2bdfccc494380f99105e0a99bb, type: 3}
+  - {fileID: 7197950832015283162, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
+  - {fileID: 9111705493784813361, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
+  - {fileID: 9079993218466354052, guid: 7bc18ade6f76841f4b82467efb2bc8a0, type: 3}
+  - {fileID: 2415134538012752117, guid: 12362248df97b4a13a3fdce799def157, type: 3}
+  - {fileID: 3322226608774067878, guid: cee5da226a1c441ec90f04ef2382f631, type: 3}
