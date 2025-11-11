@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 {
     public float health = 100f;
 
-    private float speed = 200f;
+    public float speed = 200f;
 
     public float attackDmg = 20f;
 
