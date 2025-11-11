@@ -1,72 +1,95 @@
-//using System.Numerics;
-using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DragManager : MonoBehaviour
 {
-    private Tower selectTower = null; //stores the tower we are dragging currently
+    public static DragManager Instance;
 
-    private Camera mainCam; //main camera to convert mouse coord into world coord
+    private GameObject towerPreview;       // preview being dragged
+    private GameObject selectedTowerPrefab; // prefab selected from shop
+    private RectTransform canvasRect;
+    private Canvas mainCanvas;
 
-    private void Start()
+    private void Awake()
     {
-        mainCam = Camera.main;
+        Instance = this;
+        mainCanvas = GetComponent<Canvas>();
+        canvasRect = mainCanvas.GetComponent<RectTransform>();
     }
 
-    private void Update() //updating every frame
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //if the player presses the left mouse down
+        if (towerPreview != null)
         {
-            TrySelectTower();
-        }
+            FollowMouse();
 
-        if (Input.GetMouseButton(0) && selectTower != null) //if the player is holding the left mouse down
-        {
-            DragSelectTower();
-        }
+            if (Input.GetMouseButtonDown(0)) // place on left-click
+                PlaceTower();
 
-        if (Input.GetMouseButtonUp(0) && selectTower != null) //if the player releases the left mouse
-        {
-            DropSelectTower();
+            if (Input.GetMouseButtonDown(1)) // cancel on right-click
+                CancelPlacement();
         }
     }
 
-    private void TrySelectTower() //selecting a tower with left mouse
+    public void SetSelectedTowerPrefab(GameObject prefab)
     {
-        Vector3 mousePos = Input.mousePosition; //getting mouse Pos
+        CancelPlacement();
+        selectedTowerPrefab = prefab;
 
-        mousePos.z = -mainCam.transform.position.z; //convert to world pos
-        Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
+        towerPreview = Instantiate(selectedTowerPrefab, canvasRect);
+        towerPreview.transform.localScale = Vector3.one;
 
+        var cg = towerPreview.GetComponent<CanvasGroup>();
+        if (!cg) cg = towerPreview.AddComponent<CanvasGroup>();
+        cg.alpha = 0.6f;
+        cg.blocksRaycasts = false; // so raycasts go through to grid
+    }
 
-        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero); //checking to make sure it is a tower
+    private void FollowMouse()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            Input.mousePosition,
+            mainCanvas.worldCamera,
+            out Vector2 localPoint
+        );
 
-        if (hit.collider != null)
+        towerPreview.GetComponent<RectTransform>().anchoredPosition = localPoint;
+    }
+
+    private void PlaceTower()
+    {
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = Input.mousePosition;
+
+        var raycastResults = new System.Collections.Generic.List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, raycastResults);
+
+        foreach (var r in raycastResults)
         {
-            Tower tower = hit.collider.GetComponent<Tower>(); //trying to get tower
-
-            if (tower != null) //if the object left mouse button clicked is a tower
+            if (r.gameObject.CompareTag("Grid") && r.gameObject.transform.childCount == 0)
             {
-                selectTower = tower; //remember the tower
+                towerPreview.transform.SetParent(r.gameObject.transform, false);
+                towerPreview.transform.localPosition = Vector3.zero;
+                var cg = towerPreview.GetComponent<CanvasGroup>();
+                cg.alpha = 1f;
+                cg.blocksRaycasts = true;
+                towerPreview = null;
+                selectedTowerPrefab = null;
+                return;
             }
         }
+
+        // If no valid tile, cancel placement
+        CancelPlacement();
     }
 
-    private void DragSelectTower() //dragging a tower
+    private void CancelPlacement()
     {
-        Vector3 mousePos = Input.mousePosition; //getting the mouse position
+        if (towerPreview != null)
+            Destroy(towerPreview);
 
-        mousePos.z = mainCam.transform.position.z; //convert to world pos
-        Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
-
-        selectTower.transform.position = new Vector3(worldPos.x, worldPos.y, 0f); //select tower moving to it's new position
-
-    }
-
-    private void DropSelectTower() //dropping it
-    {
-        selectTower.AligntoGrid(); //alligning it to the grid (Tower.cs)
-
-        selectTower = null; //clearing the tower reference
+        towerPreview = null;
+        selectedTowerPrefab = null;
     }
 }
