@@ -7,7 +7,7 @@ public class RangeEnemyScript : EnemyScript
 
     public float projectileSpd = 4f;
 
-    public gameObject projectilePrefab;
+    public GameObject projectilePrefab;
 
     private Transform towerTarget;
 
