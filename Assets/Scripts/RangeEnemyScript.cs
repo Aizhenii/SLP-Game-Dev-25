@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 /// <summary>
@@ -26,18 +27,11 @@ public class RangeEnemyScript : EnemyScript
             towerTarget = towerObject.transform;
         }
 
-        attckTimer = 0;
+        attckTimer = 0f;
     }
 
 
     private void Update()
-    {
-        EnemyPathing();
-        HandleRangedAttack();
-    }
-
-
-    private void HandleRangedAttack()
     {
         if (towerTarget == null)
         {
@@ -46,13 +40,31 @@ public class RangeEnemyScript : EnemyScript
             {
                 towerTarget = towerObject.transform;
             }
+            else
+            {
+                return;
+            }
         }
-
-        if (towerTarget == null)
+        float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+        if (distanceToTower > attckRange)
         {
-            return;
+            EnemyPathing();
         }
+        else
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+            }
+            HandleRangedAttack();
+        }
+        
+    }
 
+
+    private void HandleRangedAttack()
+    {
         attckTimer -= Time.deltaTime;
         if (attckTimer > 0f)
         {
