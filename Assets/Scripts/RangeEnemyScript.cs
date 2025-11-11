@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// handles specialized enemies with projectiles
+/// </summary>
 public class RangeEnemyScript : EnemyScript
 {
     public float attckRange = 2f;
@@ -59,7 +62,7 @@ public class RangeEnemyScript : EnemyScript
         float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
         if (distanceToTower <= attckRange)
         {
-            Rigidbody2D rb = getComponent<RigidBody2D>();
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.velocity = Vector2.zero;
@@ -68,7 +71,7 @@ public class RangeEnemyScript : EnemyScript
             attckTimer = attckCoolDown;
         }
     }
-    
+
     public void RangeAttack()
     {
         if (projectilePrefab == null)
@@ -89,6 +92,6 @@ public class RangeEnemyScript : EnemyScript
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
-        
+
     }
 }
