@@ -1,6 +1,9 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security;
+//using System.Threading.Tasks.Dataflow;
+
 //using System.Threading.Tasks.Dataflow;
 using UnityEngine;
 
@@ -18,6 +21,7 @@ public class EnemyScript : MonoBehaviour
 
     public float attackDmg = 20f;
 
+
     //private transform player;
 
     private Rigidbody2D rigidBody; // rigid body of enemy
@@ -29,14 +33,21 @@ public class EnemyScript : MonoBehaviour
 
     void Start()
     {
-        //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
         rigidBody = GetComponent<Rigidbody2D>(); // refers to rigid body of enemy
         
+        //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
+        
+        
+        
+
+        
+
     }
 
     void Update()
     {
         EnemyPathing();
+        
     }
 
 
@@ -47,6 +58,7 @@ public class EnemyScript : MonoBehaviour
         {
             Die();
         }
+        
 
     }
 

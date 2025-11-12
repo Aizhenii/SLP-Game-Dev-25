@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6316153490667517932}
   - component: {fileID: 6796969291475243657}
   m_Layer: 6
-  m_Name: EnemyPlaceholder
+  m_Name: WaterEnemyPlaceHolder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.04350853, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -171,8 +171,10 @@ MonoBehaviour:
   speed: 150
   attackDmg: -20
   waypoints:
-  - {fileID: 8106707669801418019, guid: a7167a2bdfccc494380f99105e0a99bb, type: 3}
-  - {fileID: 7197950832015283162, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
+  - {fileID: 9079993218466354052, guid: 7bc18ade6f76841f4b82467efb2bc8a0, type: 3}
+  - {fileID: 2415134538012752117, guid: 12362248df97b4a13a3fdce799def157, type: 3}
+  - {fileID: 3322226608774067878, guid: cee5da226a1c441ec90f04ef2382f631, type: 3}
+  - {fileID: 3322226608774067878, guid: 5d12b2449907443a6a01999b073a662c, type: 3}
   - {fileID: 9111705493784813361, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
 --- !u!222 &6316153490667517932
 CanvasRenderer:
