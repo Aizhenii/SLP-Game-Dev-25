@@ -132,9 +132,9 @@ MonoBehaviour:
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   pointC: {fileID: 0}
-  attckRange: 2
-  attckCoolDown: 2
-  projectileSpd: 4
+  attckRange: 300
+  attckCoolDown: 3
+  projectileSpd: 400
   projectilePrefab: {fileID: 4899776420327012985, guid: 236d34d01cd5032459ba7cb4909f8eb4, type: 3}
 --- !u!58 &-4270179307465305576
 CircleCollider2D:
