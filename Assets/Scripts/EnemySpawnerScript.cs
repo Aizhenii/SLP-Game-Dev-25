@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Threading.Tasks.Dataflow;
 using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
@@ -18,7 +19,7 @@ public class EnemySpawnerScript : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(-1000, 670, 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }

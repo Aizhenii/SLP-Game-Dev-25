@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1935646930335098398}
   - component: {fileID: 5480830054237403839}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: WaterEnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f42d3c43091406bbb08ff2e458ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+  enemyPrefab: {fileID: 5180307565882553186, guid: 2973ba56921b145cab2db86af2287600, type: 3}
   spawnInterval: 1
