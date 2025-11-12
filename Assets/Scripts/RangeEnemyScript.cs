@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 
 /// <summary>
@@ -15,12 +16,15 @@ public class RangeEnemyScript : EnemyScript
 
     private Transform towerTarget;
 
+    private Rigidbody2D rb;
+
     private float attckTimer;
 
 
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
         if (towerObject != null)
         {
@@ -42,39 +46,39 @@ public class RangeEnemyScript : EnemyScript
             }
             else
             {
+                EnemyPathing();
                 return;
             }
         }
+
         float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+
         if (distanceToTower > attckRange)
         {
             EnemyPathing();
         }
         else
         {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.velocity = Vector2.zero;
             }
-            HandleRangedAttack();
+            HandleRangedAttack(distanceToTower);
         }
         
     }
 
 
-    private void HandleRangedAttack()
+    private void HandleRangedAttack(float distanceToTower)
     {
         attckTimer -= Time.deltaTime;
+
         if (attckTimer > 0f)
         {
             return;
         }
-
-        float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
         if (distanceToTower <= attckRange)
         {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.velocity = Vector2.zero;
@@ -92,8 +96,16 @@ public class RangeEnemyScript : EnemyScript
             return;
         }
 
+        if(towerTarget == null)
+        {
+            Debug.LogWarning($"{name}: No tower target found");
+            return;
+        }
+
         GameObject projectileInstance = Object.Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        
         Rigidbody2D projectileRigidBody = projectileInstance.GetComponent<Rigidbody2D>();
+
         if (projectileRigidBody == null)
         {
             Debug.LogWarning($"{name}: no rb");
@@ -101,6 +113,7 @@ public class RangeEnemyScript : EnemyScript
         }
 
         Vector2 direction = ((Vector2)towerTarget.position - (Vector2)transform.position).normalized;
+        
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
