@@ -15,7 +15,7 @@ public class ProjectileScript : MonoBehaviour
         Destroy(gameObject, projectilelifeline);
     }
 
-    private void OnImpact(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Tower"))
         {

@@ -1,5 +1,4 @@
 
-
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public class RangeEnemyScript : EnemyScript
 {
+
     public float attckRange = 2f;
     public float attckCoolDown = 2f;
 
@@ -56,28 +56,19 @@ public class RangeEnemyScript : EnemyScript
             }
         }
 
-        float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+        EnemyPathing();
 
-        if (distanceToTower > attckRange)
-        {
-            EnemyPathing();
-        }
-        else
-        {
-            if (rb != null)
-            {
-                rb.velocity = Vector2.zero;
-            }
-            HandleRangedAttack(distanceToTower);
-        }
+        float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+        HandleRangedAttack(distanceToTower);
 
     }
+
 
     /// <summary>
     /// it makes sure the enemy is in range of the tower
     /// and if it is to shoot a projectile and begin the cooldown timer
     /// </summary>
-    /// <param name="distanceToTower"></param>
+    /// <param name="distanceToTower">current distance from tower</param>
     private void HandleRangedAttack(float distanceToTower)
     {
         attckTimer -= Time.deltaTime;
@@ -88,10 +79,6 @@ public class RangeEnemyScript : EnemyScript
         }
         if (distanceToTower <= attckRange)
         {
-            if (rb != null)
-            {
-                rb.velocity = Vector2.zero;
-            }
             RangeAttack();
             attckTimer = attckCoolDown;
         }
