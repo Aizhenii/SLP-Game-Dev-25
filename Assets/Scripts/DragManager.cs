@@ -68,5 +68,9 @@ public class DragManager : MonoBehaviour
         selectTower.AligntoGrid(); //alligning it to the grid (Tower.cs)
 
         selectTower = null; //clearing the tower reference
+        // debug 
+        Debug.Log("Tower dropped");
     }
+
+    
 }
