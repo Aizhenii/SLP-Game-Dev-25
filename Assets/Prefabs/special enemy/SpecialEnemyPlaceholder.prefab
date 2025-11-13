@@ -128,10 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 400
-  attackDmg: 10
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  pointC: {fileID: 0}
+  attackDmg: -10
+  waypoints: []
   attckRange: 300
   attckCoolDown: 3
   projectileSpd: 400
