@@ -21,7 +21,9 @@ public class RangeEnemyScript : EnemyScript
     private float attckTimer;
 
 
-
+    /// <summary>
+    /// initializes a tower object, and  rigidbody
+    /// </summary>
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +36,10 @@ public class RangeEnemyScript : EnemyScript
         attckTimer = 0f;
     }
 
-
+    /// <summary>
+    /// updated wether a tower has been located or not, and if it is do a ranged attack
+    /// once the enemy is close enough to the tower
+    /// </summary>
     private void Update()
     {
         if (towerTarget == null)
@@ -65,10 +70,14 @@ public class RangeEnemyScript : EnemyScript
             }
             HandleRangedAttack(distanceToTower);
         }
-        
+
     }
 
-
+    /// <summary>
+    /// it makes sure the enemy is in range of the tower
+    /// and if it is to shoot a projectile and begin the cooldown timer
+    /// </summary>
+    /// <param name="distanceToTower"></param>
     private void HandleRangedAttack(float distanceToTower)
     {
         attckTimer -= Time.deltaTime;
@@ -88,6 +97,10 @@ public class RangeEnemyScript : EnemyScript
         }
     }
 
+/// <summary>
+/// Actually creates the projectile and shoots it
+/// at the tower
+/// </summary>
     public void RangeAttack()
     {
         if (projectilePrefab == null)
@@ -96,14 +109,14 @@ public class RangeEnemyScript : EnemyScript
             return;
         }
 
-        if(towerTarget == null)
+        if (towerTarget == null)
         {
             Debug.LogWarning($"{name}: No tower target found");
             return;
         }
 
         GameObject projectileInstance = Object.Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        
+
         Rigidbody2D projectileRigidBody = projectileInstance.GetComponent<Rigidbody2D>();
 
         if (projectileRigidBody == null)
@@ -113,7 +126,7 @@ public class RangeEnemyScript : EnemyScript
         }
 
         Vector2 direction = ((Vector2)towerTarget.position - (Vector2)transform.position).normalized;
-        
+
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
