@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{036521E7-4E3A-B069-DB70-900C069F5811}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AttackTower.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TowerDragNDrop.cs">
     <Files>
       <File FileName="Assets/Scripts/Grid.cs" Line="19" Column="55" />
       <File FileName="Assets/Scripts/TowerDragNDrop.cs" Line="42" Column="42" />
-      <File FileName="Assets/Scripts/DefenseTower.cs" Line="11" Column="19" />
+      <File FileName="Assets/Scripts/DefenseTower.cs" />
       <File FileName="Assets/Scripts/AttackTower.cs" Line="8" Column="37" />
     </Files>
     <Pads>
@@ -12,7 +12,7 @@
           <Node name="SLP-Game-Dev-25" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="AttackTower.cs" selected="True" />
+                <Node name="Grid.cs" selected="True" />
               </Node>
             </Node>
           </Node>

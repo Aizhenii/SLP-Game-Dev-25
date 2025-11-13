@@ -145,4 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StructureHealth: 100
   StructureMaxHealth: 100
-  healthBar: {fileID: 0}
+  enemy: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+  healthBar: {fileID: 3308185155138304045, guid: e03af0da8a8a34850971e1cc2aa91022, type: 3}
