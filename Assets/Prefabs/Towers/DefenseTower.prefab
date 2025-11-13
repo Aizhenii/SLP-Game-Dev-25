@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4423876385198411356}
   - component: {fileID: 8164492494910869880}
   - component: {fileID: 92439890870730735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DefenseTower
   m_TagString: DefenseTower
   m_Icon: {fileID: 0}
