@@ -1,14 +1,39 @@
-
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TowerPurchaseButton : MonoBehaviour
 {
-    public GameObject towerPrefab; // assign the tower prefab in inspector
+    public GameObject towerPrefab;
 
     public void OnClickSelectTower()
     {
-        // tell the DragManager which tower prefab to spawn
-        DragManager.Instance.SetSelectedTowerPrefab(towerPrefab);
+        GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");
+        if (gridParent == null)
+        {
+            Debug.LogError("No object with tag 'Grid' found!");
+            return;
+        }
+
+        GameObject newTower = Instantiate(towerPrefab, gridParent.transform);
+        RectTransform rect = newTower.GetComponent<RectTransform>();
+        rect.localScale = Vector3.one;
+
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            gridParent.GetComponent<RectTransform>(),
+            Input.mousePosition,
+            null,
+            out localPoint
+        );
+        rect.anchoredPosition = localPoint;
+
+        TowerDragNDrop dragScript = newTower.GetComponent<TowerDragNDrop>();
+        if (dragScript != null)
+        {
+            dragScript.StartFromShop();
+        }
+        else
+        {
+            Debug.LogError("Tower prefab missing TowerDragNDrop component!");
+        }
     }
 }
