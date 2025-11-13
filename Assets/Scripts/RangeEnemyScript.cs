@@ -15,6 +15,7 @@ public class RangeEnemyScript : EnemyScript
     public GameObject projectilePrefab;
 
     private Transform towerTarget;
+    private Transform baseTarget;
 
     private Rigidbody2D rb;
 
@@ -27,10 +28,15 @@ public class RangeEnemyScript : EnemyScript
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
+        GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
+        GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
         if (towerObject != null)
         {
             towerTarget = towerObject.transform;
+        }
+        if(baseObject != null)
+        {
+            baseTarget = baseObject.transform;
         }
 
         attckTimer = 0f;
@@ -42,24 +48,47 @@ public class RangeEnemyScript : EnemyScript
     /// </summary>
     private void Update()
     {
-        if (towerTarget == null)
+        if (towerTarget == null && baseTarget == null)
         {
-            GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
+            GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
+            GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
+
             if (towerObject != null)
             {
                 towerTarget = towerObject.transform;
             }
-            else
+            if (baseObject != null)
+            {
+                baseTarget = baseObject.transform;
+            }
+            if (towerTarget == null && baseTarget == null)
             {
                 EnemyPathing();
                 return;
             }
+                
         }
 
         EnemyPathing();
 
-        float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
-        HandleRangedAttack(distanceToTower);
+        float distanceToObject = float.MaxValue;
+
+        if (towerTarget != null) {
+            float distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+            if(distanceToTower < distanceToObject)
+            {
+                distanceToObject = distanceToTower;
+            }
+        }
+        if (baseTarget != null) {
+            float distanceToBase = Vector2.Distance(transform.position, baseTarget.position);
+            if(distanceToBase < distanceToObject)
+            {
+                distanceToObject = distanceToBase;
+            }
+        }
+        HandleRangedAttack(distanceToObject);
+         
 
     }
 
@@ -96,11 +125,34 @@ public class RangeEnemyScript : EnemyScript
             return;
         }
 
-        if (towerTarget == null)
+        Transform target = null;
+
+        float distanceToTower = float.MaxValue;
+        float distanceToBase = float.MaxValue;
+
+        if (towerTarget != null)
+
         {
-            Debug.LogWarning($"{name}: No tower target found");
+            distanceToTower = Vector2.Distance(transform.position, towerTarget.position);
+        }
+        if (baseTarget != null)
+        {
+            distanceToBase = Vector2.Distance(transform.position, baseTarget.position);
+        }
+
+        if(towerTarget != null && distanceToTower <= attckRange)
+        {
+            target = towerTarget;
+        } 
+        else if (baseTarget != null && distanceToBase <= attckRange)
+        {
+            target = baseTarget;
+        }
+        if(target == null)
+        {
             return;
         }
+
 
         GameObject projectileInstance = Object.Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
@@ -112,7 +164,7 @@ public class RangeEnemyScript : EnemyScript
             return;
         }
 
-        Vector2 direction = ((Vector2)towerTarget.position - (Vector2)transform.position).normalized;
+        Vector2 direction = ((Vector2)target.position - (Vector2)transform.position).normalized;
 
         projectileRigidBody.velocity = direction * projectileSpd;
 
