@@ -8,6 +8,7 @@ public class RangeEnemyScript : EnemyScript
 {
 
     public float attckRange = 2f;
+
     public float attckCoolDown = 2f;
 
     public float projectileSpd = 4f;
@@ -20,6 +21,8 @@ public class RangeEnemyScript : EnemyScript
 
     private float attckTimer;
 
+    private DefenseTower tower; 
+
 
     /// <summary>
     /// initializes a tower object, and  rigidbody
@@ -28,6 +31,7 @@ public class RangeEnemyScript : EnemyScript
     {
         rb = GetComponent<Rigidbody2D>();
         GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
+        //tower = towerObject.GetComponent<DefenseTower>();
         if (towerObject != null)
         {
             towerTarget = towerObject.transform;
@@ -48,6 +52,7 @@ public class RangeEnemyScript : EnemyScript
             if (towerObject != null)
             {
                 towerTarget = towerObject.transform;
+                //tower = towerObject.GetComponent<DefenseTower>();
             }
             else
             {
@@ -80,6 +85,7 @@ public class RangeEnemyScript : EnemyScript
         if (distanceToTower <= attckRange)
         {
             RangeAttack();
+            //tower.attacked(20f);
             attckTimer = attckCoolDown;
         }
     }
@@ -117,6 +123,6 @@ public class RangeEnemyScript : EnemyScript
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
-
+         
     }
 }

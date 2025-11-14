@@ -6,12 +6,12 @@ public class DefenseTower : MonoBehaviour{
     [Header("Defense Tower Stats")]
     public float health = 150f; //enemy attacks at 10 per hit
     private bool isDestroyed = false; //check if tower is out of health
-    public AudioSource soundEffect;
+    private AudioClip damageSound; //sound for attacked tower
 
     //Start is called before the first frame update
     void Start()
     {
-        soundEffect = GetComponent<AudioSource>(); //for tower death
+        
     }//end of Start
 
     // Update is called once per frame
@@ -22,6 +22,11 @@ public class DefenseTower : MonoBehaviour{
     }//end of Update
 
     public void attacked(float attackAmount){
+        //play sound effect for damage at 50% volume
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(source.clip, 0.5f);
+
+        Debug.Log("Defense Tower Hit");
         if (isDestroyed){
             return; //do nothing, tower is gone
         }//end of if
@@ -34,7 +39,6 @@ public class DefenseTower : MonoBehaviour{
     public void die(){
         isDestroyed = true; //tower is gone
         Destroy(gameObject); //get rid of tower on screen
-        soundEffect.Play(); //play the tower being destroyed sound effect
-        Debug.Log("Destroyed"); //check code works
+        Debug.Log("Destroyed Defense Tower"); //check code works
     }//end of die
 }//end of Defense Tower

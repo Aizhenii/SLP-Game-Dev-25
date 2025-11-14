@@ -21,8 +21,7 @@ public class EnemyScript : MonoBehaviour
 
     public float attackDmg = 20f;
 
-
-    //private transform player;
+    private DefenseTower attackedTower;
 
     private Rigidbody2D rigidBody; // rigid body of enemy
 
@@ -31,16 +30,13 @@ public class EnemyScript : MonoBehaviour
 
     private int waypointIndex = 0;
 
+    [SerializeField] private AudioClip damageSound; //sound for dead/damaged enemy
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>(); // refers to rigid body of enemy
         
         //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
-        
-        
-        
-
-        
 
     }
 
@@ -70,31 +66,36 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
+        //play enemy death sound
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(source.clip, 0.5f);
+
         health = health - amt;
-        Debug.Log("Hit"); //can delete if you want - Elsa
+        Debug.Log("Enemy Hit"); //can delete if you want - Elsa
         if (health <= 0f)
         {
             Die();
         }
     }
 
-
-
     private void Die()
     {
+        //play enemy death sound
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(source.clip, 0.5f);
+
         Destroy(gameObject, 0.3f);
-        Debug.Log("Died"); //can delete if you want - Elsa
+        Debug.Log("Enemy Died"); //can delete if you want - Elsa
     }
 
-    /*
-    public void AttackTower(Tower playerScript)
+    //attack defense towers
+    public void AttackTower(DefenseTower t)
     {
-        if (playerScript != null)
+        if (t != null)
         {
-            playerScript.TakeDamage(attackDmg);
+            t.attacked(attackDmg);
         }
     }
-    */
 
     public void EnemyPathing()
     {
