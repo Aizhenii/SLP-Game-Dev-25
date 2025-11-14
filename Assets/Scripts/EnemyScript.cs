@@ -25,6 +25,8 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody2D rigidBody; // rigid body of enemy
 
+    private bool isDying = false; //track if the enemy is dead
+
     [SerializeField]
     private Transform[] waypoints;
 
@@ -82,12 +84,15 @@ public class EnemyScript : MonoBehaviour
 
     private void Die()
     {
+        if (isDying) return;  //prevents two deaths with audio calls, adjustments to script made for audio
+        isDying = true;
+
         //play enemy death sound at 50% volume
-        if (deathSound != null)
+        if (deathSound!=null && audioSource!=null)
             audioSource.PlayOneShot(deathSound, 0.5f);
 
-        Destroy(gameObject, 0.3f);
         Debug.Log("Enemy Died"); //can delete if you want - Elsa
+        Destroy(gameObject, 0.3f); //take game object off screen
     }
 
     //attack defense towers
