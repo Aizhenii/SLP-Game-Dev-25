@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6316153490667517932}
   - component: {fileID: 6796969291475243657}
   m_Layer: 6
-  m_Name: WaterEnemyPlaceHolder
+  m_Name: WaterEnemyPlaceHolder - Copy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

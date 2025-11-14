@@ -34,18 +34,15 @@ public class AttackTower : MonoBehaviour{
     }//end of Update
 
     
-    private void attackEnemy()
-    {
+    private void attackEnemy(){
         attackTimer += Time.deltaTime; //timing between attacks
 
         //check if a tower can attack based on time passed
-        if (attackTimer >= attackInterval)
-        {
+        if (attackTimer >= attackInterval){
             attackTimer = 0f; //resets timer after attack
-            if (enemy != null)
-            {
+            if (enemy != null){
                 enemy.TakeDamage(attackDamage);
-                Debug.Log("Attacked"); //check code working
+                Debug.Log("Attacked enemy"); //check code working
             }//end of if
         }//end of if
     }//end of attackPlayer
