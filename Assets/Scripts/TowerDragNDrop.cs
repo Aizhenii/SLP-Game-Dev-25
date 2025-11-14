@@ -10,9 +10,15 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     Vector3 startPosition;
     Transform startParent;
     private Vector3 offset; //offset from mouse and tower to keep tower attached to mouse
-
+    [SerializeField] private AudioClip placement; //sound for placing a tower down
+    private AudioSource audioSource; //to play sound effects
 
     private Coroutine followCoroutine; //used for shop dragging
+
+    //Start is called before the first frame update
+    void Start(){
+        audioSource = GetComponent<AudioSource>(); //initialize   
+    }//end of Start
 
     private void Awake(){
         canvasGroup = GetComponent<CanvasGroup>();
@@ -59,6 +65,10 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f; //no longer transparent
         canvasGroup.blocksRaycasts = true; //don't need this feature anymore
+
+        //play sound to indicate tower has been placed aside from visual aids
+        if (placement != null)
+            audioSource.PlayOneShot(placement, 0.5f);
     }//end of OnEndDrag
 
     //function to start dragging from the shop
