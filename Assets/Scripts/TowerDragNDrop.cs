@@ -12,6 +12,8 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     private Vector3 offset; //offset from mouse and tower to keep tower attached to mouse
     [SerializeField] private AudioClip placement; //sound for placing a tower down
     private AudioSource audioSource; //to play sound effects
+    public SpriteRenderer objectSprite; //get image on game object
+    Color imageColor; //color of the image
 
     private Coroutine followCoroutine; //used for shop dragging
 
@@ -22,6 +24,8 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
     private void Awake(){
         canvasGroup = GetComponent<CanvasGroup>();
+        objectSprite = GetComponent<SpriteRenderer>(); //initialize
+        imageColor = objectSprite.color; //assign color
     }//end of Awake
 
     //what will happen when you start to click and start drag
@@ -50,6 +54,25 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = transform.position.z; 
         transform.position = mouseWorldPos + offset;
+
+        //pointer event at current mouse position in coordinates
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = Input.mousePosition; //current mouse position
+        //UI Raycast
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, results); //UI Raycast for detection for GraphicRaycaster component
+
+        //change color to let player know about valid positions
+        bool isValidPosition = false; //check if position in map is interactable with towers
+        foreach (RaycastResult result in results){
+            if (result.gameObject.CompareTag("Grid")){ //must get grid and not other elements
+                isValidPosition = true; //correct position
+                Debug.Log("Correct Position");
+                break; //exit loop to give player feedback
+            }//end of if
+        }//end of foreach
+        checkValidPosition(isValidPosition); //indicate to player placement correctness
+
     }//end of OnDrag
 
     //what happens at the end of the drag
@@ -65,11 +88,39 @@ public class TowerDragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f; //no longer transparent
         canvasGroup.blocksRaycasts = true; //don't need this feature anymore
+        resetColor(); //reset to original color
 
         //play sound to indicate tower has been placed aside from visual aids
         if (placement != null)
             audioSource.PlayOneShot(placement, 0.5f);
     }//end of OnEndDrag
+
+    public void checkValidPosition(bool isValid){
+        float alpha = .5f; //transparency level
+
+        if (objectSprite == null){
+            return; //do nothing if there is no tower image to alter
+        }//end of if
+
+        if (isValid){
+            objectSprite.color = new Color(0f, 1f, 0f, alpha); //green with 50% transparency
+            //objectSprite.color = new Color(0f, 1f, 0f, alpha); 
+        }//end of if
+        else{
+            objectSprite.color = new Color(1f, 0f, 0f, alpha); //red with 50% transparency
+            //objectSprite.color = new Color(1f, 0f, 0f, alpha); 
+        }//end of else
+
+    }//end of checkValidPosition 
+
+    //set object to original color
+    public void resetColor(){
+        if (objectSprite != null){
+            objectSprite.color = new Color(imageColor.r, imageColor.g, imageColor.b, 1f);
+            //objectSprite.color = new Color(imageColor.r, imageColor.g, imageColor.b, 1f);
+        }//end of if
+    }//end of resetColor
+
 
     //function to start dragging from the shop
     public void StartFromShop(){
