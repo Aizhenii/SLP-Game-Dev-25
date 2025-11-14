@@ -68,7 +68,7 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
-        //play enemy death sound at 50% volume
+        //play enemy damage sound at 50% volume
         if(damageSound != null)
             audioSource.PlayOneShot(damageSound, 0.5f);
 

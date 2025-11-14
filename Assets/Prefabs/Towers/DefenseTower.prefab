@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  damageSound: {fileID: 8300000, guid: 94c903b0eac2ca271b3077c4709d4db0, type: 3}
+  deathSound: {fileID: 8300000, guid: 5c3b71f6331ea44469a49e1ba927d607, type: 3}
 --- !u!225 &-4423876385198411356
 CanvasGroup:
   m_ObjectHideFlags: 0
