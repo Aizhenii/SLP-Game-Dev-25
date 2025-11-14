@@ -71,7 +71,7 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(float amt)
     {
         //play enemy damage sound at 50% volume
-        if(damageSound != null)
+        if(damageSound!=null && audioSource!=null)
             audioSource.PlayOneShot(damageSound, 0.5f);
 
         health = health - amt;
@@ -79,6 +79,7 @@ public class EnemyScript : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+            return;
         }
     }
 
