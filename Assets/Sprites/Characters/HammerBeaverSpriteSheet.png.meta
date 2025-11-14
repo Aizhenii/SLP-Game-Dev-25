@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80c7d79615e21429f8635434c8cfb657
+guid: f2659e25d55674918a841db2a74728b2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_0
+      name: HammerBeaverSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d29690f8db24150a60c6b2c1b00010
-      internalID: -1634188970
+      spriteID: 6042897257a394d71bf52cdf3dcf5b2a
+      internalID: 769853605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_1
+      name: HammerBeaverSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e007e49921cb45fbadfb6a3f493fd2d
+      internalID: 577586198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6031089b53524dde9c720e9297156da
+      internalID: 1914167213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434b9e8a1cb4f4b60b13e798b81f6fae
+      internalID: 1926787542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4932eb8d30ae24ec5ac1d0f1f1188e8b
+      internalID: 1259762169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_5
       rect:
         serializedVersion: 2
         x: 320
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +216,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64982c6dc075f42a88c2ce990e2c5b18
-      internalID: -1033697270
+      spriteID: e222bc3ec83404377a0e7b317f294f41
+      internalID: 201745990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_2
+      name: HammerBeaverSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d1dfa0a667849a1930d6c63bb11f39
+      internalID: -605642989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f76f0ebacb94a83ac2899a982ba605
+      internalID: 1557853940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3459d7f2c514ee590def7ae596f340
+      internalID: -623568902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311f2098edf1d46dda9cec2f5a71b799
+      internalID: 758056189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_10
       rect:
         serializedVersion: 2
         x: 640
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +321,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eab05ea90257e4aa6b57f37196fe8a0d
-      internalID: 272588353
+      spriteID: 44aacb6b3fe0a4ab6add1a1d1977b4ed
+      internalID: 1582595272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_3
+      name: HammerBeaverSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f440901d7354c5984b280fbcbe1859
+      internalID: -1598881318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d434b7be7b741aca35d9675b825185
+      internalID: -1405279870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cff790d585f429dbec95afd0551210
+      internalID: 954292947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ea00c1491384eb4827989eb8187edd
+      internalID: -601656610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBeaverSpriteSheet_15
       rect:
         serializedVersion: 2
         x: 960
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +426,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 759922f655473466180927aef79539e1
-      internalID: 581543940
+      spriteID: 7a9a9e15cdc8847a89bce0c84c7a53fb
+      internalID: -1541744701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_4
+      name: HammerBeaverSpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1024
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +447,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d8b5fc40c7f482e97e8295cef66226
-      internalID: 303390657
+      spriteID: 071822a3229984fbcbf1724a1809ef26
+      internalID: 31824223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSplashSpriteSheet_5
+      name: HammerBeaverSpriteSheet_17
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1088
         y: 0
-        width: 320
-        height: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,155 +468,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b22ef1f62c3b246e2847b2dd1232a9d0
-      internalID: -1321751378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58291831d43b84ead8d6cccacc7186fc
-      internalID: -2094308975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c6402ef04de64723bd414484581d3ef
-      internalID: -267286443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c88d280efb21a48e59070fc5a0d42336
-      internalID: -78005472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1ea43dd280ff47d0bbcfcb192d5aa47
-      internalID: 550245769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b82737c0f7c3a4b79a62ae5932eecd77
-      internalID: 1918063206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 3520
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5157daeda21b1414aaae7c77db89c681
-      internalID: -619599252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterSplashSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56f0c2f627ce84a5d9958d0427d7094e
-      internalID: 1116118992
+      spriteID: 4cf94243aee5744028e40a178a29297e
+      internalID: 852154524
       vertices: []
       indices: 
       edges: []
@@ -380,19 +485,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WaterSplashSpriteSheet_0: -1634188970
-      WaterSplashSpriteSheet_1: -1033697270
-      WaterSplashSpriteSheet_10: 1918063206
-      WaterSplashSpriteSheet_11: -619599252
-      WaterSplashSpriteSheet_12: 1116118992
-      WaterSplashSpriteSheet_2: 272588353
-      WaterSplashSpriteSheet_3: 581543940
-      WaterSplashSpriteSheet_4: 303390657
-      WaterSplashSpriteSheet_5: -1321751378
-      WaterSplashSpriteSheet_6: -2094308975
-      WaterSplashSpriteSheet_7: -267286443
-      WaterSplashSpriteSheet_8: -78005472
-      WaterSplashSpriteSheet_9: 550245769
+      HammerBeaverSpriteSheet_0: 769853605
+      HammerBeaverSpriteSheet_1: 577586198
+      HammerBeaverSpriteSheet_10: 1582595272
+      HammerBeaverSpriteSheet_11: -1598881318
+      HammerBeaverSpriteSheet_12: -1405279870
+      HammerBeaverSpriteSheet_13: 954292947
+      HammerBeaverSpriteSheet_14: -601656610
+      HammerBeaverSpriteSheet_15: -1541744701
+      HammerBeaverSpriteSheet_16: 31824223
+      HammerBeaverSpriteSheet_17: 852154524
+      HammerBeaverSpriteSheet_2: 1914167213
+      HammerBeaverSpriteSheet_3: 1926787542
+      HammerBeaverSpriteSheet_4: 1259762169
+      HammerBeaverSpriteSheet_5: 201745990
+      HammerBeaverSpriteSheet_6: -605642989
+      HammerBeaverSpriteSheet_7: 1557853940
+      HammerBeaverSpriteSheet_8: -623568902
+      HammerBeaverSpriteSheet_9: 758056189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

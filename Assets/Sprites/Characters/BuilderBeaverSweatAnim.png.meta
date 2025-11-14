@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dd5e04198fa54463a734fb49fc2c94f
+guid: 70e0311e26523421cba9b5c870bcdb6c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CatapultFiringAnim_0
+      name: BuilderBeaverSweatAnim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc40c03bf0f9e4dbd9ec5087adc90097
-      internalID: 1624731479
+      spriteID: 6eab16b7b8a4a4677a93aa29c8226455
+      internalID: -2058437246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatapultFiringAnim_1
+      name: BuilderBeaverSweatAnim_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f806854ffb3d943d9bd5793be3ddf472
-      internalID: 1052071887
+      spriteID: 75ba16fcab61049c0bca0574029de68d
+      internalID: -1850092311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatapultFiringAnim_2
+      name: BuilderBeaverSweatAnim_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94fc38d813a1140c68c89e647564ad71
-      internalID: 19767901
+      spriteID: 8c6feaee404074a358dae78560f628e4
+      internalID: 502140131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatapultFiringAnim_3
+      name: BuilderBeaverSweatAnim_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795eb1b15d4414974ae20fc0061ddd74
-      internalID: -1145114310
+      spriteID: 4fd4f7e702bec4360b36fa033c18f456
+      internalID: 1716697143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatapultFiringAnim_4
+      name: BuilderBeaverSweatAnim_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,50 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca89dac0c67f44b9ae6bef0c189cbb5
-      internalID: 1786667787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CatapultFiringAnim_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02b385ac3c4184368ab7073416f9d4de
-      internalID: -1426294398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CatapultFiringAnim_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 875024aa500a34b129383941178542ae
-      internalID: -1161620066
+      spriteID: 4d2404daab2e84a69ae44dcab01293ef
+      internalID: -292123896
       vertices: []
       indices: 
       edges: []
@@ -254,13 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CatapultFiringAnim_0: 1624731479
-      CatapultFiringAnim_1: 1052071887
-      CatapultFiringAnim_2: 19767901
-      CatapultFiringAnim_3: -1145114310
-      CatapultFiringAnim_4: 1786667787
-      CatapultFiringAnim_5: -1426294398
-      CatapultFiringAnim_6: -1161620066
+      BuilderBeaverSweatAnim_0: -2058437246
+      BuilderBeaverSweatAnim_1: -1850092311
+      BuilderBeaverSweatAnim_2: 502140131
+      BuilderBeaverSweatAnim_3: 1716697143
+      BuilderBeaverSweatAnim_4: -292123896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
