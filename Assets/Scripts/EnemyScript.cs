@@ -30,12 +30,14 @@ public class EnemyScript : MonoBehaviour
 
     private int waypointIndex = 0;
 
-    [SerializeField] private AudioClip damageSound; //sound for dead/damaged enemy
+    [SerializeField] private AudioClip damageSound; //sound for damaged enemy
+    [SerializeField] private AudioClip deathSound; //sound for dead enemy
+    private AudioSource audioSource; //to play sound effects
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>(); // refers to rigid body of enemy
-        
+        audioSource = GetComponent<AudioSource>(); //initialize
         //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
 
     }
@@ -66,9 +68,9 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
-        //play enemy death sound
-        AudioSource source = GetComponent<AudioSource>();
-        source.PlayOneShot(source.clip, 0.5f);
+        //play enemy death sound at 50% volume
+        if(damageSound != null)
+            audioSource.PlayOneShot(damageSound, 0.5f);
 
         health = health - amt;
         Debug.Log("Enemy Hit"); //can delete if you want - Elsa
@@ -80,9 +82,9 @@ public class EnemyScript : MonoBehaviour
 
     private void Die()
     {
-        //play enemy death sound
-        AudioSource source = GetComponent<AudioSource>();
-        source.PlayOneShot(source.clip, 0.5f);
+        //play enemy death sound at 50% volume
+        if (deathSound != null)
+            audioSource.PlayOneShot(deathSound, 0.5f);
 
         Destroy(gameObject, 0.3f);
         Debug.Log("Enemy Died"); //can delete if you want - Elsa

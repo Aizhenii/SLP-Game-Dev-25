@@ -137,7 +137,8 @@ MonoBehaviour:
   - {fileID: 8106707669801418019, guid: a7167a2bdfccc494380f99105e0a99bb, type: 3}
   - {fileID: 7197950832015283162, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
   - {fileID: 9111705493784813361, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
-  diedSound: {fileID: 0}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   attckRange: 350
   attckCoolDown: 4
   projectileSpd: 150
@@ -213,7 +214,8 @@ MonoBehaviour:
   speed: 200
   attackDmg: 20
   waypoints: []
-  diedSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  damageSound: {fileID: 8300000, guid: 779ab451ac9b2b492b332c0f990286bf, type: 3}
+  deathSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
 --- !u!82 &-8452399096320998580
 AudioSource:
   m_ObjectHideFlags: 0

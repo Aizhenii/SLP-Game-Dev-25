@@ -177,7 +177,8 @@ MonoBehaviour:
   - {fileID: 3322226608774067878, guid: cee5da226a1c441ec90f04ef2382f631, type: 3}
   - {fileID: 3322226608774067878, guid: 5d12b2449907443a6a01999b073a662c, type: 3}
   - {fileID: 9111705493784813361, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
-  diedSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  damageSound: {fileID: 8300000, guid: 779ab451ac9b2b492b332c0f990286bf, type: 3}
+  deathSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
 --- !u!222 &6316153490667517932
 CanvasRenderer:
   m_ObjectHideFlags: 0
