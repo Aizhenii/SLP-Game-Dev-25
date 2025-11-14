@@ -37,10 +37,6 @@ public class EnemyScript : MonoBehaviour
         
         //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
         
-        
-        
-
-        
 
     }
 
