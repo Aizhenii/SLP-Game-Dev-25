@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placement: {fileID: 8300000, guid: 1e6992cafd3150e4597ceda484a7663e, type: 3}
+  sprite: {fileID: 4158131124331175553}
 --- !u!114 &-1705678153259838840
 MonoBehaviour:
   m_ObjectHideFlags: 0
