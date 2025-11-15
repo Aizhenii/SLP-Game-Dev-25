@@ -6,6 +6,14 @@ public class TowerPurchaseButton : MonoBehaviour
 
     public void OnClickSelectTower()
     {
+        // Check if the player can afford this tower
+        TowerCost cost = towerPrefab.GetComponent<TowerCost>();
+        if (cost != null && !CurrencyManager.Instance.SpendMoney(cost.cost))
+        {
+            Debug.Log("Not enough money to buy tower!");
+            return; // stop, do NOT spawn
+        }
+
         GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");
         if (gridParent == null)
         {
@@ -17,6 +25,7 @@ public class TowerPurchaseButton : MonoBehaviour
         RectTransform rect = newTower.GetComponent<RectTransform>();
         rect.localScale = Vector3.one;
 
+        // Position the tower at the mouse position within the grid (BUG)
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             gridParent.GetComponent<RectTransform>(),

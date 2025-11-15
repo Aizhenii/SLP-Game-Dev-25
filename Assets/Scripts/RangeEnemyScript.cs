@@ -8,6 +8,7 @@ public class RangeEnemyScript : EnemyScript
 {
 
     public float attckRange = 2f;
+
     public float attckCoolDown = 2f;
 
     public float projectileSpd = 4f;
@@ -20,6 +21,14 @@ public class RangeEnemyScript : EnemyScript
 
     private float attckTimer;
 
+    [SerializeField] private AudioClip attackSound; //sound for fired projectiles
+    private AudioSource audioSource; //to play sound effects
+
+
+    //Start is called before the first frame update
+    void Start(){
+        audioSource = GetComponent<AudioSource>(); //initialize   
+    }//end of Start
 
     /// <summary>
     /// initializes a tower object, and  rigidbody
@@ -28,6 +37,7 @@ public class RangeEnemyScript : EnemyScript
     {
         rb = GetComponent<Rigidbody2D>();
         GameObject towerObject = GameObject.FindGameObjectWithTag("Tower");
+        //tower = towerObject.GetComponent<DefenseTower>();
         if (towerObject != null)
         {
             towerTarget = towerObject.transform;
@@ -48,6 +58,7 @@ public class RangeEnemyScript : EnemyScript
             if (towerObject != null)
             {
                 towerTarget = towerObject.transform;
+                //tower = towerObject.GetComponent<DefenseTower>();
             }
             else
             {
@@ -117,6 +128,10 @@ public class RangeEnemyScript : EnemyScript
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
+
+        //play sound effect for attack projectile at 50% volume
+        if (attackSound != null)
+            audioSource.PlayOneShot(attackSound, 0.5f);
 
     }
 }

@@ -21,26 +21,26 @@ public class EnemyScript : MonoBehaviour
 
     public float attackDmg = 20f;
 
-
-    //private transform player;
+    private DefenseTower attackedTower;
 
     private Rigidbody2D rigidBody; // rigid body of enemy
+
+    private bool isDying = false; //track if the enemy is dead
 
     [SerializeField]
     private Transform[] waypoints;
 
     private int waypointIndex = 0;
 
+    [SerializeField] private AudioClip damageSound; //sound for damaged enemy
+    [SerializeField] private AudioClip deathSound; //sound for dead enemy
+    private AudioSource audioSource; //to play sound effects
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>(); // refers to rigid body of enemy
-        
+        audioSource = GetComponent<AudioSource>(); //initialize
         //tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
-        
-        
-        
-
-        
 
     }
 
@@ -70,31 +70,40 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float amt)
     {
+        //play enemy damage sound at 50% volume
+        if(damageSound!=null && audioSource!=null)
+            audioSource.PlayOneShot(damageSound, 0.5f);
+
         health = health - amt;
-        Debug.Log("Hit"); //can delete if you want - Elsa
+        Debug.Log("Enemy Hit"); //can delete if you want - Elsa
         if (health <= 0f)
         {
             Die();
+            return;
         }
     }
-
-
 
     private void Die()
     {
-        Destroy(gameObject, 0.3f);
-        Debug.Log("Died"); //can delete if you want - Elsa
+        if (isDying) return;  //prevents two deaths with audio calls, adjustments to script made for audio
+        isDying = true;
+
+        //play enemy death sound at 50% volume
+        if (deathSound!=null && audioSource!=null)
+            audioSource.PlayOneShot(deathSound, 0.5f);
+
+        Debug.Log("Enemy Died"); //can delete if you want - Elsa
+        Destroy(gameObject, 0.3f); //take game object off screen
     }
 
-    /*
-    public void AttackTower(Tower playerScript)
+    //attack defense towers
+    public void AttackTower(DefenseTower t)
     {
-        if (playerScript != null)
+        if (t != null)
         {
-            playerScript.TakeDamage(attackDmg);
+            t.attacked(attackDmg);
         }
     }
-    */
 
     public void EnemyPathing()
     {
