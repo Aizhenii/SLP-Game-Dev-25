@@ -128,25 +128,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237488035314688710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd47abad2df4fc428d43122ae11aaa3, type: 3}
+  m_Script: {fileID: 11500000, guid: df2ef1466f42f3249b94bf9192ed2967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  speed: 100
+  speed: 200
   attackDmg: 20
   waypoints:
   - {fileID: 8106707669801418019, guid: a7167a2bdfccc494380f99105e0a99bb, type: 3}
   - {fileID: 7197950832015283162, guid: 89fffb88d42b048209633e8a08255f5a, type: 3}
-  - {fileID: 1996089518174987748, guid: 2a1d18f472559449ab92b2d3d8cfad7a, type: 3}
   - {fileID: 9111705493784813361, guid: d5ec9dac3c69049789a60f4a7343a5cb, type: 3}
-  damageSound: {fileID: 8300000, guid: 779ab451ac9b2b492b332c0f990286bf, type: 3}
-  deathSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
-  attckRange: 350
-  attckCoolDown: 4
-  projectileSpd: 150
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  attckRange: 300
+  attckCoolDown: 2
+  projectileSpd: 400
   projectilePrefab: {fileID: 4899776420327012985, guid: 236d34d01cd5032459ba7cb4909f8eb4, type: 3}
-  attackDmg: -10
-  attackSound: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
 --- !u!58 &1272650595029667286
 CircleCollider2D:
   m_ObjectHideFlags: 0
