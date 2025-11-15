@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028977e8e709f42eebafc27ce37c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7425575079869569085, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
+  towerPrefab: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
 --- !u!114 &62511046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028977e8e709f42eebafc27ce37c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
+  towerPrefab: {fileID: 7425575079869569085, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
 --- !u!114 &108414870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,8 +2786,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 256139974}
   - {fileID: 1486179714}
+  - {fileID: 256139974}
   m_Father: {fileID: 790455609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13266,11 +13266,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 151.875
       objectReference: {fileID: 0}
     - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 151.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5187501
       objectReference: {fileID: 0}
     - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13319,6 +13323,10 @@ PrefabInstance:
     - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471251201011043668, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425575079869569085, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
       propertyPath: m_Name
@@ -15959,7 +15967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5471251201011043668, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -128.86957
+      value: -156
       objectReference: {fileID: 0}
     - target: {fileID: 5471251201011043668, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15975,6 +15983,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
       propertyPath: m_Name
+      value: AttackTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
+      propertyPath: m_TagString
       value: AttackTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17764,7 +17780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028977e8e709f42eebafc27ce37c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
+  towerPrefab: {fileID: 7425575079869569085, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
 --- !u!114 &1685097294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18776,7 +18792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028977e8e709f42eebafc27ce37c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7425575079869569085, guid: 6d118fecb7c1148fdbbca5b870a262a5, type: 3}
+  towerPrefab: {fileID: 7425575079869569085, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
 --- !u!114 &1796216619
 MonoBehaviour:
   m_ObjectHideFlags: 0
