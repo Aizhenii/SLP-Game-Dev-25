@@ -8,13 +8,16 @@ public class EnemySpawnerScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject enemyPrefab;
+    [SerializeField]
+    private GameObject enemyPrefab2;
 
     public float spawnInterval = 3f;
     private int enemyCounter;
     private int enemiesPerWave;
     public bool waveComplete;
     private Coroutine spawnRoutine;
-    public static bool waveStart;
+    private Coroutine spawnRoutine2;
+    
     
 
 
@@ -23,6 +26,7 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         enemiesPerWave = 2;
         spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
+        spawnRoutine2 = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab2, enemiesPerWave));
         enemyCounter = 0;
         waveComplete = false;
     }
@@ -32,14 +36,10 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         
         // this block of code ends the wave once the right amount of enemies has been spawned.
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length > 2)
-        {
-            waveStart = false;
-        }
-        
         if (enemyCounter == enemiesPerWave)
         {
             StopCoroutine(spawnRoutine);
+            StopCoroutine(spawnRoutine2);
             waveComplete = true;
         }
 
@@ -50,21 +50,10 @@ public class EnemySpawnerScript : MonoBehaviour
             waveComplete = false;
             enemyCounter = 0;
             enemiesPerWave += 5;
-            waveStart = true;
-            //enemyCounter = 0;
-            //enemiesPerWave += 5;
-            //spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
-            
-            //waveComplete = false;
-            //enemyCounter = 0;
-            //enemiesPerWave += 5;
-            //spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
+            spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
+            spawnRoutine2 = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab2, enemiesPerWave));
         }
         
-        if (waveStart == true)
-        {
-            spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
-        }
         
         
         
