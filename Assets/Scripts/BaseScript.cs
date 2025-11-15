@@ -12,7 +12,9 @@ public class BaseScript : MonoBehaviour
     private HealthBarUI healthBar;
     
     private EnemyScript enemyDamage;
-    
+
+    [SerializeField] private AudioClip damageSound; //sound for damaged base
+    private AudioSource audioSource; //to play sound effects
 
     // This sets the healthbar to the maximum health when starting.
     void Start()
@@ -20,6 +22,7 @@ public class BaseScript : MonoBehaviour
         healthBar.SetMaxHealth(MaxHealth);
         enemyDamage = enemy.GetComponent<EnemyScript>();
         enemyDamage.attackDmg = -20f;
+        audioSource = GetComponent<AudioSource>(); //initialize
     }
 
     // This is how the healthbar updates.
@@ -38,6 +41,9 @@ public class BaseScript : MonoBehaviour
         {
             UnityEngine.Debug.Log("base attacked");
             SetHealth(enemyDamage.attackDmg);
+            //play sound effect for damage at 50% volume
+            if (damageSound != null)
+                audioSource.PlayOneShot(damageSound, 0.5f);
         }
         
     }
