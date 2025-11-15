@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5180307565882553186, guid: 0f4d7e12590bf4bd2a96087f9cd0363e, type: 3}
+  enemyPrefab2: {fileID: 5180307565882553186, guid: de1a595dca31b4803b10386b059d7c35, type: 3}
   spawnInterval: 1
+  waveComplete: 0

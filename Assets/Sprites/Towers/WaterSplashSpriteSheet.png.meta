@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cd15a3d2a199e341b955a92eb1f5334
+guid: 80c7d79615e21429f8635434c8cfb657
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_0
+      name: WaterSplashSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2058719437443a142a740b4402226fce
-      internalID: -1637090389
+      spriteID: 92d29690f8db24150a60c6b2c1b00010
+      internalID: -1634188970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_1
+      name: WaterSplashSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 320
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9452d49f1df23a448aa59908a9c479c
-      internalID: 1247756961
+      spriteID: 64982c6dc075f42a88c2ce990e2c5b18
+      internalID: -1033697270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_2
+      name: WaterSplashSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 281
+        x: 640
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf906fbe80afa1429e5c96741f44f00
-      internalID: 1119560152
+      spriteID: eab05ea90257e4aa6b57f37196fe8a0d
+      internalID: 272588353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_3
+      name: WaterSplashSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 423
+        x: 960
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9c70670addb0dd448166e8e1a0d37fc
-      internalID: -610178211
+      spriteID: 759922f655473466180927aef79539e1
+      internalID: 581543940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_4
+      name: WaterSplashSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 565
+        x: 1280
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d96bd6b52665a445b7450cb10558526
-      internalID: 2147369042
+      spriteID: b3d8b5fc40c7f482e97e8295cef66226
+      internalID: 303390657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_5
+      name: WaterSplashSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 706
+        x: 1600
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e6b2d1f82e5ece4987229a85ebd1423
-      internalID: -166321666
+      spriteID: b22ef1f62c3b246e2847b2dd1232a9d0
+      internalID: -1321751378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_6
+      name: WaterSplashSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 846
+        x: 1920
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd7883e2163afef4ebf34cf1c6afcbe5
-      internalID: 1542164487
+      spriteID: 58291831d43b84ead8d6cccacc7186fc
+      internalID: -2094308975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_7
+      name: WaterSplashSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 988
+        x: 2240
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d58175d0b3c8854d925917527b5a654
-      internalID: 676613187
+      spriteID: 6c6402ef04de64723bd414484581d3ef
+      internalID: -267286443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_8
+      name: WaterSplashSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 1128
+        x: 2560
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbb03f2697d148948a91431cd86c0a90
-      internalID: 489123235
+      spriteID: c88d280efb21a48e59070fc5a0d42336
+      internalID: -78005472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBaseSpriteSheet_9
+      name: WaterSplashSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 1269
+        x: 2880
         y: 0
-        width: 128
-        height: 128
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +300,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ccb7e4cb49a03f48b934e52f6fa66c3
-      internalID: 380245009
+      spriteID: a1ea43dd280ff47d0bbcfcb192d5aa47
+      internalID: 550245769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterSplashSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82737c0f7c3a4b79a62ae5932eecd77
+      internalID: 1918063206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterSplashSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5157daeda21b1414aaae7c77db89c681
+      internalID: -619599252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterSplashSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f0c2f627ce84a5d9958d0427d7094e
+      internalID: 1116118992
       vertices: []
       indices: 
       edges: []
@@ -330,16 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BeaverBaseSpriteSheet_0: -1637090389
-      BeaverBaseSpriteSheet_1: 1247756961
-      BeaverBaseSpriteSheet_2: 1119560152
-      BeaverBaseSpriteSheet_3: -610178211
-      BeaverBaseSpriteSheet_4: 2147369042
-      BeaverBaseSpriteSheet_5: -166321666
-      BeaverBaseSpriteSheet_6: 1542164487
-      BeaverBaseSpriteSheet_7: 676613187
-      BeaverBaseSpriteSheet_8: 489123235
-      BeaverBaseSpriteSheet_9: 380245009
+      WaterSplashSpriteSheet_0: -1634188970
+      WaterSplashSpriteSheet_1: -1033697270
+      WaterSplashSpriteSheet_10: 1918063206
+      WaterSplashSpriteSheet_11: -619599252
+      WaterSplashSpriteSheet_12: 1116118992
+      WaterSplashSpriteSheet_2: 272588353
+      WaterSplashSpriteSheet_3: 581543940
+      WaterSplashSpriteSheet_4: 303390657
+      WaterSplashSpriteSheet_5: -1321751378
+      WaterSplashSpriteSheet_6: -2094308975
+      WaterSplashSpriteSheet_7: -267286443
+      WaterSplashSpriteSheet_8: -78005472
+      WaterSplashSpriteSheet_9: 550245769
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
