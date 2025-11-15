@@ -11,6 +11,11 @@ public class AttackTower : MonoBehaviour{
     private EnemyScript enemy; //get enemy
     private float attackTimer;
     private float searchTimer;
+
+    //Projectile settings
+    public GameObject towerProjectilePrefab;
+    public Transform fire;
+    public float projectileSpeed = 300f;
     [SerializeField] private AudioClip attackSound; //sound for firing/attacking
     private AudioSource audioSource; //to play sound effects
 
@@ -48,13 +53,39 @@ public class AttackTower : MonoBehaviour{
         if (attackTimer >= attackInterval){
             attackTimer = 0f; //resets timer after attack
             if (enemy != null){
-                enemy.TakeDamage(attackDamage);
+                //enemy.TakeDamage(attackDamage);
+                fireProjectile();
                 if (attackSound != null) //play sound effect when enemy located and attacked
                     audioSource.PlayOneShot(attackSound, 0.25f);
                 Debug.Log("Attacked enemy"); //check code working
             }//end of if
         }//end of if
     }//end of attackPlayer
+
+    //new method to fire projectile
+    private void fireProjectile()
+    {
+        if(towerProjectilePrefab == null)
+        {
+            Debug.LogWarning("no projectile prefab");
+            return;
+        }
+
+        Vector3 spawnPosition = fire != null ? fire.position : transform.position;
+
+        GameObject projectileObject = Instantiate(towerProjectilePrefab, spawnPosition, Quaternion.identity);
+        TowerProjectileScript proj = projectileObject.GetComponent<TowerProjectileScript>();
+        if(proj != null)
+        {
+            proj.initialize(enemy.transform, attackDamage, projectileSpeed);
+        }
+        else
+        {
+            Debug.LogWarning("projectile has no script!");
+        }
+
+            
+    }
 
     private void findEnemy(){
         GameObject[] incomingEnemies = GameObject.FindGameObjectsWithTag("Enemy");
