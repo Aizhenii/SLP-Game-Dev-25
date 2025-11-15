@@ -21,6 +21,8 @@ public class RangeEnemyScript : EnemyScript
 
     private float attckTimer;
 
+    public float numAttackDmg = 20f;
+
     [SerializeField] private AudioClip attackSound; //sound for fired projectiles
     private AudioSource audioSource; //to play sound effects
 
@@ -128,6 +130,12 @@ public class RangeEnemyScript : EnemyScript
         projectileRigidBody.velocity = direction * projectileSpd;
 
         Debug.Log($"{name}: FIREEE");
+
+        DefenseTower target = towerTarget.GetComponent<DefenseTower>(); //get properties of defense tower
+
+        if(target != null){
+            target.attacked(numAttackDmg);
+        }//end of if
 
         //play sound effect for attack projectile at 50% volume
         if (attackSound != null)
