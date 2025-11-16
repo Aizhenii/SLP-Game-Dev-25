@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b2ab1499d256a7448e024fad5f135ad
+guid: c0b4bf0a7d3294a078486ff4d8723a9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,24 +93,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrassTile_0
+      name: GrassTileRound 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d6d1d6ab05492e4da226f562df53ac8
-      internalID: 1669562555
+      spriteID: a15cc3fba737347d8aa1426b20197443
+      internalID: -1307038942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_1
+      name: GrassTileRound 1_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -145,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20919cf608e46b14cabf33f46475931d
-      internalID: -680949472
+      spriteID: 4cb3e5286864a43a39932b25b1b38528
+      internalID: -869831650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_2
+      name: GrassTileRound 1_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -166,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99fcddc5a918c524794c1fd19ec1bd91
-      internalID: 83464093
+      spriteID: 4497d8e1b6fc04d95bb8b81aff0bdf0d
+      internalID: -677064815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_3
+      name: GrassTileRound 1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -187,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 404848c25ebb8774497355e4b5867e50
-      internalID: 529525294
+      spriteID: 81a83205ecda04615b5051f54d2b5589
+      internalID: -584393189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_4
+      name: GrassTileRound 1_4
       rect:
         serializedVersion: 2
         x: 1000
@@ -208,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e34c94075f4e4e740adddb43413cf7b9
-      internalID: 1507462975
+      spriteID: 48ca16b5e650240f5830268bbee1644a
+      internalID: -2069717824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_5
+      name: GrassTileRound 1_5
       rect:
         serializedVersion: 2
         x: 2000
@@ -229,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 427dcf306677837438594486662b77c3
-      internalID: 1593226771
+      spriteID: a550560ac942d4c74a9e846a2f28031d
+      internalID: -1480540904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_6
+      name: GrassTileRound 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -250,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b45c264566268d4ebcbe074ae68c3e0
-      internalID: 1633761725
+      spriteID: 196ca6b22bd7f4064a6acd0a49f16f7f
+      internalID: 1759284687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_7
+      name: GrassTileRound 1_7
       rect:
         serializedVersion: 2
         x: 1000
@@ -271,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceb758981bfeec340b122408f94cc03a
-      internalID: -1880160486
+      spriteID: 88bc2d4a721654030aa4bdec00e673da
+      internalID: 502408647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassTile_8
+      name: GrassTileRound 1_8
       rect:
         serializedVersion: 2
         x: 2000
@@ -292,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82bbe8ff184ab1f41b8109eaa82c73fe
-      internalID: 1395949182
+      spriteID: 3dd423b07ffdd415098b1ab0643f400c
+      internalID: -1907158186
       vertices: []
       indices: 
       edges: []
@@ -309,15 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GrassTile_0: 1669562555
-      GrassTile_1: -680949472
-      GrassTile_2: 83464093
-      GrassTile_3: 529525294
-      GrassTile_4: 1507462975
-      GrassTile_5: 1593226771
-      GrassTile_6: 1633761725
-      GrassTile_7: -1880160486
-      GrassTile_8: 1395949182
+      GrassTileRound 1_0: -1307038942
+      GrassTileRound 1_1: -869831650
+      GrassTileRound 1_2: -677064815
+      GrassTileRound 1_3: -584393189
+      GrassTileRound 1_4: -2069717824
+      GrassTileRound 1_5: -1480540904
+      GrassTileRound 1_6: 1759284687
+      GrassTileRound 1_7: 502408647
+      GrassTileRound 1_8: -1907158186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
