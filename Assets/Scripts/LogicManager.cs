@@ -9,34 +9,43 @@ using System.Security.Cryptography;
 
 public class LogicManager : MonoBehaviour
 {
-    //public GameObject winLevelScreen;
     public GameObject LoseScreen;
+    public GameObject WinScreen;
     public GameObject LevelCompleteScreen;
     public GameObject WaveCompleteScreen;
 
-    //Game State Variables
-    public bool baseDestroyed = false;
-    public bool levelComplete = false;
-    public bool waveComplete = false;
+    public BaseScript baseScript;
+    public EnemySpawnerScript enemySpawnerScript;
 
-    public BaseScript BaseDestroyed;
+    private void Awake()
+    {
+        baseScript = FindObjectOfType<BaseScript>();
+        enemySpawnerScript = FindObjectOfType<EnemySpawnerScript>();
+    }
 
     private void Update()
     {
-        if (BaseDestroyed)
+        if (baseScript.baseDestroyed)
         {
             LoseGame();
         }
 
-        if (levelComplete)
+        //if (enemySpawnerScript.levelComplete)
+        //{
+        //    LevelComplete();
+        //}
+
+        if (enemySpawnerScript.gameWon)
         {
-            LevelComplete();
+            WinGame();
         }
 
-        if (waveComplete)
+        //show wave UI once per wave
+        if (enemySpawnerScript.waveComplete && !WaveCompleteScreen.activeSelf && !enemySpawnerScript.gameWon)
         {
             WaveComplete();
         }
+        
     }
 
     public void NextLevel()
@@ -46,7 +55,8 @@ public class LogicManager : MonoBehaviour
 
     public void NextWave()
     {
-        //next wave logic (enemy spawner etc.)
+        WaveCompleteScreen.SetActive(false);
+        enemySpawnerScript.StartNextWave();
     }
 
     public void RestartLevel()
@@ -64,18 +74,31 @@ public class LogicManager : MonoBehaviour
     public void WaveComplete()
     {
         WaveCompleteScreen.SetActive(true);
-
+        
+        //pause game
         Time.timeScale = 0f;
     }
 
     public void LoseGame()
     {
+        //pause game
+        Time.timeScale = 0f;
         LoseScreen.SetActive(true);
+    }
+
+    public void WinGame()
+    {
+        //pause game
+        Time.timeScale = 0f;
+        WinScreen.SetActive(true);
     }
 
     public void QuitGame()
     {
+        //resume game
+        Time.timeScale = 1f;
         Debug.Log("Returning to Menu Scene...");
         SceneManager.LoadScene("Title_Scene");
+       
     }
 }
