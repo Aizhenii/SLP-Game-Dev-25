@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 /// <summary>
@@ -17,7 +16,7 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Tower"))
+        if (other.CompareTag("DefenseTower") || other.CompareTag("Base"))
         {
             Debug.Log($"{name}: poof!!");
             Destroy(gameObject);
