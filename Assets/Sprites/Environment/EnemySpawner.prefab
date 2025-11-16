@@ -48,3 +48,4 @@ MonoBehaviour:
   enemyPrefab2: {fileID: 5180307565882553186, guid: de1a595dca31b4803b10386b059d7c35, type: 3}
   spawnInterval: 1
   waveComplete: 0
+  waveNum: 0

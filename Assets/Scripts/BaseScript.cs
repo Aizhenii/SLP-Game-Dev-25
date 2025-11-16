@@ -8,6 +8,8 @@ public class BaseScript : MonoBehaviour
     public float Health, MaxHealth;
     public GameObject enemy;
 
+    public bool baseDestroyed = false;
+
     [SerializeField]
     private HealthBarUI healthBar;
     
@@ -32,6 +34,12 @@ public class BaseScript : MonoBehaviour
         Health = Mathf.Clamp(Health, 0, MaxHealth);
 
         healthBar.SetHealth(Health);
+
+        if (Health <= 0 && !baseDestroyed)
+        {
+            baseDestroyed = true;
+            UnityEngine.Debug.Log("Base Destroyed");
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
