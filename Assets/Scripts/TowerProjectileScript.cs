@@ -24,26 +24,33 @@ public class TowerProjectileScript : MonoBehaviour
 
     private void Update()
     {
-        if(target == null)
+        if(target != null)
         {
-            Destroy(gameObject);
-            return;
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position += direction * speed * Time.deltaTime;
+        }
+        else
+        {
+            transform.position += transform.up * speed * Time.deltaTime;
+
         }
 
-        Vector3 direction = (target.position - transform.position).normalized;
-        transform.position += direction * speed * Time.deltaTime;
    }
 
    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(!other.CompareTag("Enemy")){
-            return;
+        if(other.CompareTag("Enemy")){
+            Debug.LogWarning("Fired at enemy");
+        
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            if(enemy!= null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(gameObject);
         }
-        EnemyScript enemy = other.GetComponent<EnemyScript>();
-        if(enemy!= null)
-        {
-            enemy.TakeDamage(damage);
-        }
-        Destroy(gameObject);
     }
 }
+
+
+
