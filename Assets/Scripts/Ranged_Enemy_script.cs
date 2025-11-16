@@ -28,12 +28,12 @@ public class RangeEnemyScript : EnemyScript
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
+        //GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
         GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
-        if (towerObject != null)
-        {
-            towerTarget = towerObject.transform;
-        }
+        // if (towerObject != null)
+        // {
+        //     towerTarget = towerObject.transform;
+        // }
         if(baseObject != null)
         {
             baseTarget = baseObject.transform;
@@ -48,26 +48,30 @@ public class RangeEnemyScript : EnemyScript
     /// </summary>
     private void Update()
     {
-        if (towerTarget == null && baseTarget == null)
-        {
-            GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
-            GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
 
-            if (towerObject != null)
-            {
-                towerTarget = towerObject.transform;
-            }
-            if (baseObject != null)
-            {
-                baseTarget = baseObject.transform;
-            }
+        towerTarget = FindTower();
+
+
+        // if (towerTarget == null && baseTarget == null)
+        // {
+            // GameObject towerObject = GameObject.FindGameObjectWithTag("DefenseTower");
+            // GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
+
+            // if (towerObject != null)
+            // {
+            //     towerTarget = towerObject.transform;
+            // }
+            // if (baseObject != null)
+            // {
+            //     baseTarget = baseObject.transform;
+            // }
             if (towerTarget == null && baseTarget == null)
             {
                 EnemyPathing();
                 return;
             }
                 
-        }
+        // }
 
         EnemyPathing();
 
@@ -89,6 +93,39 @@ public class RangeEnemyScript : EnemyScript
         }
         HandleRangedAttack(distanceToObject);
          
+
+    }
+
+
+    private Transform FindTower()
+    {
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("DefenseTower");
+
+        if(towers == null || towers.Length == 0)
+        {
+            return null;
+        }
+
+        Transform closest = null;
+        float closestDistance = float.MaxValue;
+        Vector2 pos = transform.position;
+
+        foreach(GameObject tower in towers)
+        {
+            if(tower == null || !tower.activeInHierarchy)
+            {
+                continue;
+            }
+            float distance = Vector2.Distance(pos, tower.transform.position);
+
+            if(distance < closestDistance)
+            {
+                closestDistance = distance;
+                closest = tower.transform;
+            }
+        }
+        return closest;
+
 
     }
 
