@@ -17,6 +17,7 @@ public class EnemySpawnerScript : MonoBehaviour
     public bool waveComplete;
     private Coroutine spawnRoutine;
     private Coroutine spawnRoutine2;
+    public int waveNum;
     
     
 
@@ -29,6 +30,7 @@ public class EnemySpawnerScript : MonoBehaviour
         spawnRoutine2 = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab2, enemiesPerWave));
         enemyCounter = 0;
         waveComplete = false;
+        waveNum = 1;
     }
 
 
@@ -52,6 +54,7 @@ public class EnemySpawnerScript : MonoBehaviour
             enemiesPerWave += 5;
             spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
             spawnRoutine2 = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab2, enemiesPerWave));
+            waveNum++;
         }
         
         
