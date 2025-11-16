@@ -39,7 +39,7 @@ public class TowerProjectileScript : MonoBehaviour
         if(!other.CompareTag("Enemy")){
             return;
         }
-        EnemyScript enemy = other.GetComponent<EnemyScript>();
+        EnemyScript enemy = other.GetComponentInParent<EnemyScript>();
         if(enemy!= null)
         {
             enemy.TakeDamage(damage);
