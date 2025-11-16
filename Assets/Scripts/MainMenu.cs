@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject rulesPanel;
     public GameObject mainMenuPanel;
-
     public bool isDisplayed = false;
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Level_1_Scene");

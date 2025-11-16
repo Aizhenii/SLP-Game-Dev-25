@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class AttackTower : MonoBehaviour{
     [Header("Attack Tower Stats")]
-    public float attackRange = 10f; //range of attack
-    public float attackDamage = 1000f; //amount of damage tower does
+    public float attackRange = 1000f; //range of attack
+    public float attackDamage = 50F; //amount of damage tower does
     public float attackInterval = 1f; //wait this amount of seconds before attacking again
     public float searchInterval = .25f; //time between searches for an enemy
     private EnemyScript enemy; //get enemy
     private float attackTimer;
     private float searchTimer;
+
+    //Projectile settings
+    public GameObject towerProjectilePrefab;
+    public Transform fire;
+    public float projectileSpeed = 300f;
+    [SerializeField] private AudioClip attackSound; //sound for firing/attacking
+    private AudioSource audioSource; //to play sound effects
+
+    //Start is called before the first frame update
+    void Start(){
+        audioSource = GetComponent<AudioSource>(); //initialize   
+    }//end of Start
 
     void Update(){
         searchTimer += Time.deltaTime;
@@ -34,21 +46,46 @@ public class AttackTower : MonoBehaviour{
     }//end of Update
 
     
-    private void attackEnemy()
-    {
+    private void attackEnemy(){
         attackTimer += Time.deltaTime; //timing between attacks
 
         //check if a tower can attack based on time passed
-        if (attackTimer >= attackInterval)
-        {
+        if (attackTimer >= attackInterval){
             attackTimer = 0f; //resets timer after attack
-            if (enemy != null)
-            {
+            if (enemy != null){
                 enemy.TakeDamage(attackDamage);
-                Debug.Log("Attacked"); //check code working
+                fireProjectile();
+                if (attackSound != null) //play sound effect when enemy located and attacked
+                    audioSource.PlayOneShot(attackSound, 0.25f);
+                Debug.Log($"fAttacked enemy {enemy.health}"); //check code working
             }//end of if
         }//end of if
     }//end of attackPlayer
+
+    //new method to fire projectile
+    private void fireProjectile()
+    {
+        if(towerProjectilePrefab == null)
+        {
+            Debug.LogWarning("no projectile prefab");
+            return;
+        }
+
+        Vector3 spawnPosition = fire != null ? fire.position : transform.position;
+
+        GameObject projectileObject = Instantiate(towerProjectilePrefab, spawnPosition, Quaternion.identity);
+        TowerProjectileScript proj = projectileObject.GetComponent<TowerProjectileScript>();
+        if(proj != null)
+        {
+            proj.initialize(enemy.transform, attackDamage, projectileSpeed);
+        }
+        else
+        {
+            Debug.LogWarning("projectile has no script!");
+        }
+
+            
+    }
 
     private void findEnemy(){
         GameObject[] incomingEnemies = GameObject.FindGameObjectsWithTag("Enemy");
