@@ -31,7 +31,7 @@ public class TowerProjectileScript : MonoBehaviour
         }
         else
         {
-            transform.position += transform.up * speed * Time.deltaTime;
+            Destroy(gameObject);
 
         }
 
