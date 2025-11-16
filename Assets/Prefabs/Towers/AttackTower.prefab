@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1000
-  attackDamage: 10
+  attackDamage: 50
   attackInterval: 1
   searchInterval: 0.25
   towerProjectilePrefab: {fileID: 7399791098760399353, guid: 22f047717f07e5e4e9e1a794dcd17dc7, type: 3}

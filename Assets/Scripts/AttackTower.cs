@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackTower : MonoBehaviour{
     [Header("Attack Tower Stats")]
     public float attackRange = 1000f; //range of attack
-    public float attackDamage = 10F; //amount of damage tower does
+    public float attackDamage = 50F; //amount of damage tower does
     public float attackInterval = 1f; //wait this amount of seconds before attacking again
     public float searchInterval = .25f; //time between searches for an enemy
     private EnemyScript enemy; //get enemy
@@ -53,11 +53,11 @@ public class AttackTower : MonoBehaviour{
         if (attackTimer >= attackInterval){
             attackTimer = 0f; //resets timer after attack
             if (enemy != null){
-                //enemy.TakeDamage(attackDamage);
+                enemy.TakeDamage(attackDamage);
                 fireProjectile();
                 if (attackSound != null) //play sound effect when enemy located and attacked
                     audioSource.PlayOneShot(attackSound, 0.25f);
-                Debug.Log("Attacked enemy"); //check code working
+                Debug.Log($"fAttacked enemy {enemy.health}"); //check code working
             }//end of if
         }//end of if
     }//end of attackPlayer
