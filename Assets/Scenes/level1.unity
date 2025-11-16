@@ -17319,6 +17319,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 3876315140336408547, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
+      propertyPath: towerProjectilePrefab
+      value: 
+      objectReference: {fileID: 7399791098760399353, guid: 22f047717f07e5e4e9e1a794dcd17dc7, type: 3}
     - target: {fileID: 5471251201011043668, guid: ce1ecbebdf1d348ce973f04bb9eafe8b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
