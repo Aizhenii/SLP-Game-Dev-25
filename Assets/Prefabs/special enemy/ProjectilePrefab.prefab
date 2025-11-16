@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6203630275540610711}
   - component: {fileID: 1946709581540843022}
   - component: {fileID: 805541294783962158}
-  - component: {fileID: 2471485360797125316}
   - component: {fileID: 1294089788462911914}
+  - component: {fileID: 349365542165803739}
   m_Layer: 6
   m_Name: ProjectilePrefab
   m_TagString: Untagged
@@ -160,19 +160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21146883, y: 0.1959312}
   m_EdgeRadius: 0
---- !u!114 &2471485360797125316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4899776420327012985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588a7f82e4bdeff4fb1decb37a939dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilelifeline: 2
 --- !u!95 &1294089788462911914
 Animator:
   serializedVersion: 5
@@ -183,7 +170,7 @@ Animator:
   m_GameObject: {fileID: 4899776420327012985}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cdb1f0ccc23434d8489d461523f6b8bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: f9b56308ad292493ab88ebf9636a2b6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -194,3 +181,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &349365542165803739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899776420327012985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b755e27fe36cd74b81165981a15a05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilelifeline: 2
