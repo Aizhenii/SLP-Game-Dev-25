@@ -53,7 +53,7 @@ public class EnemySpawnerScript : MonoBehaviour
             waveComplete = true;
         }
         
-        if (waveNum > 3 && waveComplete && !gameWon)
+        if (waveNum >= 3 && waveComplete && !gameWon)
         {
             //levelComplete = true;
             gameWon = true;
@@ -81,6 +81,8 @@ public class EnemySpawnerScript : MonoBehaviour
 
         spawnRoutine = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab, enemiesPerWave));
         spawnRoutine2 = StartCoroutine(spawnEnemy(spawnInterval, enemyPrefab2, enemiesPerWave));
+        
+        Time.timeScale = 1f;
     }
     
     public void StartNextWave()
