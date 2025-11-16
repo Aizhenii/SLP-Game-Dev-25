@@ -171,6 +171,9 @@ MonoBehaviour:
   attackDamage: 10
   attackInterval: 1
   searchInterval: 0.25
+  towerProjectilePrefab: {fileID: 7399791098760399353, guid: 22f047717f07e5e4e9e1a794dcd17dc7, type: 3}
+  fire: {fileID: 0}
+  projectileSpeed: 300
   attackSound: {fileID: 8300000, guid: d9419ba0bfac1e84a95418ac5851caf6, type: 3}
 --- !u!225 &-5960262113004397500
 CanvasGroup:

@@ -24,14 +24,17 @@ public class TowerProjectileScript : MonoBehaviour
 
     private void Update()
     {
-        if(target == null)
+        if(target != null)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position += direction * speed * Time.deltaTime;
+        }
+        else
         {
             Destroy(gameObject);
-            return;
+
         }
 
-        Vector3 direction = (target.position - transform.position).normalized;
-        transform.position += direction * speed * Time.deltaTime;
    }
 
    private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +42,8 @@ public class TowerProjectileScript : MonoBehaviour
         if(!other.CompareTag("Enemy")){
             return;
         }
+        Debug.LogWarning("Fired at enemy");
+        
         EnemyScript enemy = other.GetComponentInParent<EnemyScript>();
         if(enemy!= null)
         {
