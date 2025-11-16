@@ -698,6 +698,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7826574364568949005, guid: f314a41b4732092498591435c18e450b, type: 3}
+      propertyPath: m_text
+      value: "Objective: \nDefend your wooden Beaver Fortress and the envrionment
+        with advanced \"stick\"-based machinery to push out the encroaching factory
+        workers!\n\nSurvive 3 waves, while placing towers, to beat the game!\n\nControls:\n\"Drag/Click
+        \" = Place Defensive/Offensive Towers\n\"Esc\" = Pause Game/Exit Rules Screen"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
